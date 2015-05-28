@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
   dslVersion="1.0.0.0"
   Id="e91547d4-3fd6-4f5a-9933-e52a5c017928"
   name="WorkoutHelperModels" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -15,6 +15,12 @@
       <profileInstance
         Id="532ea607-fb19-44b8-8502-3351b05452be"
         name="StandardProfileL3" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="16f82440-d719-4c67-9a71-01f582719569">
+      <profileInstance
+        Id="76f890a8-d8cf-4467-8582-1936164d6198"
+        name="CSharpProfile" />
     </packageHasProfileInstances>
   </profileInstances>
   <packagedElements>
@@ -171,6 +177,45 @@
                 <memberEnd
                   Id="65a7972a-86d0-4d21-8fb2-a4df60c62f0e"
                   name="Select Workout"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="6eb4ade0-7982-40f4-a844-9e53c814a6a0"
+            isDerived="false"
+            sourceEndRoleName="User"
+            targetEndRoleName="Add Workouts"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="f11759dc-e053-4a8c-9f3f-f26f53ee94b7"
+              LastKnownName="Add Workouts"
+              LastKnownLocation="WorkoutHelperModels.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="53d7776a-4669-4172-81e9-0c207279530e"
+                  name="User"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="6653d024-fa97-4966-a8b2-f8e5d4a2e3d2"
+                  name="Add Workouts"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -440,19 +485,19 @@
             isLeaf="false">
             <flowNodeTargets>
               <controlFlow
-                Id="f83ba5fb-2309-4d9e-98f4-2d904cab147b"
-                isLeaf="false">
-                <opaqueActionMoniker
-                  Id="223478e2-02a2-4355-b3ee-356a48657cf2"
-                  LastKnownName="Plan Weeks"
-                  LastKnownLocation="WorkoutHelperModels.uml" />
-              </controlFlow>
-              <controlFlow
                 Id="f2b30e3d-2e4c-49a6-be63-8fbeb3f22a7b"
                 isLeaf="false">
                 <opaqueActionMoniker
                   Id="a5e40d26-ae67-4d46-9d00-3ee4fd331fad"
                   LastKnownName="Create Program Elements"
+                  LastKnownLocation="WorkoutHelperModels.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="569bec7e-b9f4-4f11-ab05-2f2226b66e93"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="6a0b44dd-d026-49e8-afb5-4b66b86523f3"
+                  LastKnownName="Add Workouts"
                   LastKnownLocation="WorkoutHelperModels.uml" />
               </controlFlow>
             </flowNodeTargets>
@@ -493,14 +538,6 @@
             isLeaf="false">
             <flowNodeTargets>
               <controlFlow
-                Id="1f3fb2b5-91ba-49e2-a3da-4bd406689556"
-                isLeaf="false">
-                <opaqueActionMoniker
-                  Id="223478e2-02a2-4355-b3ee-356a48657cf2"
-                  LastKnownName="Plan Weeks"
-                  LastKnownLocation="WorkoutHelperModels.uml" />
-              </controlFlow>
-              <controlFlow
                 Id="776df625-18e1-4764-8017-70927cb0a804"
                 isLeaf="false">
                 <opaqueActionMoniker
@@ -508,15 +545,8 @@
                   LastKnownName="Create Program Elements"
                   LastKnownLocation="WorkoutHelperModels.uml" />
               </controlFlow>
-            </flowNodeTargets>
-          </decisionNode>
-          <opaqueAction
-            Id="223478e2-02a2-4355-b3ee-356a48657cf2"
-            name="Plan Weeks"
-            isLeaf="false">
-            <flowNodeTargets>
               <controlFlow
-                Id="f94b6710-b10c-4d11-8e79-3ce06efefecb"
+                Id="80ab6fb9-7743-427f-8d73-f2cf9d934a7d"
                 isLeaf="false">
                 <opaqueActionMoniker
                   Id="6a0b44dd-d026-49e8-afb5-4b66b86523f3"
@@ -524,7 +554,7 @@
                   LastKnownLocation="WorkoutHelperModels.uml" />
               </controlFlow>
             </flowNodeTargets>
-          </opaqueAction>
+          </decisionNode>
           <opaqueAction
             Id="6a0b44dd-d026-49e8-afb5-4b66b86523f3"
             name="Add Workouts"
@@ -843,6 +873,13 @@
               LastKnownName="Document Exercises"
               LastKnownLocation="WorkoutHelperModels.uml" />
           </extend>
+          <extend
+            Id="c673fb15-4a34-4f4b-8261-d5a51d67dead">
+            <useCaseMoniker
+              Id="71b02249-9f81-468f-9cb2-0a9b35adc65c"
+              LastKnownName="Edit Program"
+              LastKnownLocation="WorkoutHelperModels.uml" />
+          </extend>
         </extendedCases>
         <subjects>
           <subsystemMoniker
@@ -900,6 +937,15 @@
         name="Add Workouts"
         isAbstract="false"
         isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="19dc0264-843b-4c6f-85bb-636c3dedd22b">
+            <useCaseMoniker
+              Id="516f20dd-4f5a-4282-88ce-d65e4aee4db0"
+              LastKnownName="Add/remove Exercises"
+              LastKnownLocation="WorkoutHelperModels.uml" />
+          </extend>
+        </extendedCases>
         <subjects>
           <subsystemMoniker
             Id="e01858ad-f7f0-4e74-ab88-755b041a9fe2"
@@ -997,6 +1043,49 @@
             </relationshipOwnedElementsInternal>
           </association>
         </targetEnds>
+        <extendedCases>
+          <extend
+            Id="23cc313c-186a-483c-9b47-8e7bdff9584e">
+            <useCaseMoniker
+              Id="516f20dd-4f5a-4282-88ce-d65e4aee4db0"
+              LastKnownName="Add/remove Exercises"
+              LastKnownLocation="WorkoutHelperModels.uml" />
+          </extend>
+        </extendedCases>
+        <subjects>
+          <subsystemMoniker
+            Id="e01858ad-f7f0-4e74-ab88-755b041a9fe2"
+            LastKnownName="Workout Helper"
+            LastKnownLocation="WorkoutHelperModels.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="17eb88fd-c766-44f8-a4ac-a41d343e55f8"
+        name="Class1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="238f298c-a130-48ac-88c9-9c5622683780"
+        LastKnownName="WorkoutHelper"
+        LastKnownLocation="Package1_2230.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="320fca0e-75b9-4be0-b7aa-a3398ed2d866"
+        LastKnownName="System"
+        LastKnownLocation="Package3_2230.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="71b02249-9f81-468f-9cb2-0a9b35adc65c"
+        name="Edit Program"
+        isAbstract="false"
+        isLeaf="false">
         <subjects>
           <subsystemMoniker
             Id="e01858ad-f7f0-4e74-ab88-755b041a9fe2"

@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel"
+  dslVersion="1.0.0.0"
+  Id="9d790ef6-09b9-4ede-8a73-f22c46837678"
+  name="Enums"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="a7491598-b705-4f5d-a8af-b8d021cfae3e"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DWorkoutHelper.Domain.Enums"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <enumeration
+        Id="b05337b4-e6ad-4c46-a1de-37653571704c"
+        name="WkCategory"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="d1c9326c-c277-4f6c-ab6e-22508227ba21"
+            handle="viewcode://./CodeSchema_Enum?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FLinn%2FDropbox%2FEget%2FWorkoutHelper%2FWorkoutHelper.Domain%2Fbin%2FDebug%2FWorkoutHelper.Domain.dll Namespace%3DWorkoutHelper.Domain.Enums Type%3DWkCategory"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="4f5c0513-16a6-4a40-913a-15355f6c5872"
+            name="enum"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4edf10f7-33ac-48cb-94b7-898f1161a43a">
+                <propertyInstance
+                  Id="d3248c07-91d7-4e20-9913-6226c0131eef"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9b678b4a-0aad-4593-9170-7e04a9a2ccb3">
+                <propertyInstance
+                  Id="499f3f20-f60f-4250-9dd7-5f9c41dd836a"
+                  name="BaseType"
+                  value="int" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c1155117-0149-459e-994b-c005e58d1659">
+                <propertyInstance
+                  Id="c049e1a0-c6f5-4117-8c03-9c60827ab0d3"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </enumeration>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="5eeaff08-36ba-46b8-8c75-86abb9bf09eb"
+        name="WkLevel"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="dce585a2-03d8-4b8c-9fc3-3db0087f961b"
+            handle="viewcode://./CodeSchema_Enum?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FLinn%2FDropbox%2FEget%2FWorkoutHelper%2FWorkoutHelper.Domain%2Fbin%2FDebug%2FWorkoutHelper.Domain.dll Namespace%3DWorkoutHelper.Domain.Enums Type%3DWkLevel"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="84fe3264-1eae-4d41-9a1d-2d747f8d45d3"
+            name="enum"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c49b02eb-6537-4f3c-a924-b7237b82f613">
+                <propertyInstance
+                  Id="887fcbcf-7239-49e9-9c9f-73be8a85cacc"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e82ab895-0909-46c0-8012-4704ae39a70e">
+                <propertyInstance
+                  Id="33dbd459-726c-45c2-be32-b4045c939b32"
+                  name="BaseType"
+                  value="int" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0769908b-8272-4b5e-9539-e01044210150">
+                <propertyInstance
+                  Id="92f1e1f5-8725-4885-9067-a127af611a35"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </enumeration>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="38e29b7e-86af-4302-abba-bce372ab6ddd"
+        name="WkMuscle"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="95cafe1d-6e90-4029-b5ad-77d0ca3423ae"
+            handle="viewcode://./CodeSchema_Enum?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FLinn%2FDropbox%2FEget%2FWorkoutHelper%2FWorkoutHelper.Domain%2Fbin%2FDebug%2FWorkoutHelper.Domain.dll Namespace%3DWorkoutHelper.Domain.Enums Type%3DWkMuscle"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="90f03f39-750a-479d-91d0-abec6c412220"
+            name="enum"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="8e1d1392-d0fd-4030-a5c2-63f77e657318">
+                <propertyInstance
+                  Id="25a2967a-56d6-4b8d-89ca-1e78244774ec"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="1d2333b7-458a-4a97-bb1e-944feccde04d">
+                <propertyInstance
+                  Id="0e8e06e0-6cea-4bfb-a01c-5505e199b941"
+                  name="BaseType"
+                  value="int" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f791d77f-ca65-41f3-9e3e-f0c50bed3db4">
+                <propertyInstance
+                  Id="ce2c2574-1da6-4dcb-9352-1531f186547d"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </enumeration>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="7bdcdb24-df87-414f-abe5-078a5f060343"
+        name="WkForce"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="b6bb77a7-7e57-4ae5-8b3a-f27a2677081d"
+            handle="viewcode://./CodeSchema_Enum?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FLinn%2FDropbox%2FEget%2FWorkoutHelper%2FWorkoutHelper.Domain%2Fbin%2FDebug%2FWorkoutHelper.Domain.dll Namespace%3DWorkoutHelper.Domain.Enums Type%3DWkForce"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="4699113d-deb4-41dd-a5f6-40db8f0d9cad"
+            name="enum"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a8701cf0-8141-41b1-9f08-bc9cfe3a839e">
+                <propertyInstance
+                  Id="9c818804-8caf-43ec-b9d4-62295fdc14d6"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4ed926d6-55d7-4b2f-9f59-7829f003453a">
+                <propertyInstance
+                  Id="4e020229-11f4-4c11-945d-3d1116b243f0"
+                  name="BaseType"
+                  value="int" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="02357c37-d662-4b93-b9a2-d9ea249f08be">
+                <propertyInstance
+                  Id="7250de38-8aff-4ff1-9e6f-46f37e38f6c9"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </enumeration>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="765f6a01-1457-4ea2-9a40-90ff04594ec8"
+        name="WkExerciseType"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="a9a7510f-38ac-46e0-a022-30d7013a7109"
+            handle="viewcode://./CodeSchema_Enum?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FLinn%2FDropbox%2FEget%2FWorkoutHelper%2FWorkoutHelper.Domain%2Fbin%2FDebug%2FWorkoutHelper.Domain.dll Namespace%3DWorkoutHelper.Domain.Enums Type%3DWkExerciseType"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="fef2ab30-f3c6-4423-b000-ab2092f05ec1"
+            name="enum"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="bf4fe2b0-74f0-45d7-b69b-6622dce9cef5">
+                <propertyInstance
+                  Id="637bd917-eca6-47b5-a572-d7dedae46fd9"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="2b80f138-167b-4c19-946e-7f376c0a948c">
+                <propertyInstance
+                  Id="6fd61219-83ad-4d65-857d-30627520d41a"
+                  name="BaseType"
+                  value="int" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="74847c34-e04b-4644-ac4f-94d3035d381b">
+                <propertyInstance
+                  Id="4a914b4b-11c1-4166-aaea-e6264db3f00b"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </enumeration>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

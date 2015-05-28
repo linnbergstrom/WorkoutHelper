@@ -1,5 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="7d5e20cb-e3dc-46f1-810e-69cc37d08bfc" name="UseCaseDiagram1" linkedPackageId="1df02097-e1c0-40fe-bfe4-ca1862224ed5" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" dslVersion="1.0.0.0" Id="7d5e20cb-e3dc-46f1-810e-69cc37d08bfc" name="UseCaseDiagram1" linkedPackageId="1df02097-e1c0-40fe-bfe4-ca1862224ed5" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="74648d35-37c1-4040-a175-eb6b5907ab3a">
+      <profileInstance Id="995a4423-cc02-4be5-aa75-5ef72ae4357c" name="CSharpProfile">
+        <elementDefinition Id="76f890a8-d8cf-4467-8582-1936164d6198" />
+      </profileInstance>
+      <elementDefinition Id="16f82440-d719-4c67-9a71-01f582719569" />
+    </packageHasProfileInstances>
+  </profileInstances>
   <packagedElements>
     <useCaseModelRootHasTypes>
       <actor Id="f217fb43-3ce5-4350-8b46-8469548f17f4" name="User" isAbstract="false" isLeaf="false">
@@ -52,6 +60,22 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="95363150-d8e7-4c05-98b8-061602373295" />
+          </association>
+          <association Id="57b5c1e5-cee4-4878-b0da-84f88757a4cf" isDerived="false" sourceEndRoleName="User" targetEndRoleName="Add Workouts" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="99ccabfe-328f-4069-9d3b-4307c3afff74" LastKnownName="Add Workouts" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="aeadd364-1f54-488f-ba35-8040df446361" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="53d7776a-4669-4172-81e9-0c207279530e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ac11c947-68a6-4384-9ba7-b8013819119c" name="Add Workouts" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="6653d024-fa97-4966-a8b2-f8e5d4a2e3d2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="6eb4ade0-7982-40f4-a844-9e53c814a6a0" />
           </association>
         </targetEnds>
       </actor>
@@ -240,6 +264,10 @@
             <useCaseMoniker Id="9ae5d1b3-f85c-40ce-9111-ab39cf4c39c7" LastKnownName="Document Exercises" />
             <elementDefinition Id="2df8446f-9e35-4a4c-8c89-d3499757b648" />
           </extend>
+          <extend Id="3fead2cc-2872-4616-a07d-41e235dfbd8f">
+            <useCaseMoniker Id="95d0d077-9610-4497-b66d-42cffd5e35a7" LastKnownName="Edit Program" />
+            <elementDefinition Id="c673fb15-4a34-4f4b-8261-d5a51d67dead" />
+          </extend>
         </extendedCases>
         <subjects>
           <subsystemMoniker Id="67a1a0a7-506a-4867-ad9c-5433dc10de3c" LastKnownName="Workout Helper" />
@@ -265,6 +293,12 @@
     <packageHasNamedElement>
       <useCase Id="99ccabfe-328f-4069-9d3b-4307c3afff74" name="Add Workouts" isAbstract="false" isLeaf="false">
         <elementDefinition Id="f11759dc-e053-4a8c-9f3f-f26f53ee94b7" />
+        <extendedCases>
+          <extend Id="b006bb12-8060-4eb5-a49d-d3ef0d4d22fb">
+            <useCaseMoniker Id="057fe9ca-d2a7-42ca-b0e4-0e15dbbd62e4" LastKnownName="Add/remove Exercises" />
+            <elementDefinition Id="19dc0264-843b-4c6f-85bb-636c3dedd22b" />
+          </extend>
+        </extendedCases>
         <subjects>
           <subsystemMoniker Id="67a1a0a7-506a-4867-ad9c-5433dc10de3c" LastKnownName="Workout Helper" />
         </subjects>
@@ -315,6 +349,20 @@
             <elementDefinition Id="461a466c-11d9-48eb-8921-9506310504fe" />
           </association>
         </targetEnds>
+        <extendedCases>
+          <extend Id="b49d0dbf-ffb5-4c25-b531-4231fc1b8a04">
+            <useCaseMoniker Id="057fe9ca-d2a7-42ca-b0e4-0e15dbbd62e4" LastKnownName="Add/remove Exercises" />
+            <elementDefinition Id="23cc313c-186a-483c-9b47-8e7bdff9584e" />
+          </extend>
+        </extendedCases>
+        <subjects>
+          <subsystemMoniker Id="67a1a0a7-506a-4867-ad9c-5433dc10de3c" LastKnownName="Workout Helper" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="95d0d077-9610-4497-b66d-42cffd5e35a7" name="Edit Program" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="71b02249-9f81-468f-9cb2-0a9b35adc65c" />
         <subjects>
           <subsystemMoniker Id="67a1a0a7-506a-4867-ad9c-5433dc10de3c" LastKnownName="Workout Helper" />
         </subjects>

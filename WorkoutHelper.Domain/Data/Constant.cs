@@ -12,3 +12,6 @@ namespace WorkoutHelper.Domain.Data
 		public const string ParentIsProgram = "ExerciseProgram";
 	}
 }
+
+
+
