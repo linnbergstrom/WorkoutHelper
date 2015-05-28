@@ -1,0 +1,105 @@
+﻿@model WorkoutHelper.ViewModels.WorkoutViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+<link href="~/Content/jquery.datetimepicker.css" rel="stylesheet"/>
+<div class="col-md-3">
+    <div class="">
+        <h3>@ViewBag.SideTitle</h3>
+        <h5>@ViewBag.SideMessage</h5>
+    </div>
+
+    @if (ViewBag.ShowNote == "true")
+    {
+        <div class="panel panel-info">
+            <div class="panel-heading"></div>
+            <div class="panel-body">
+                <h6></h6>
+            </div>
+        </div>
+    }
+</div>
+<div class="col-md-9">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(model => model.ExerciseProgramId)
+        <div class="form-horizontal">
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.Title, new { @class = "control-label col-md-2 xs-col-2" })
+                <div class="col-xs-6 col-md-6">
+                    @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.WorkoutDate, new { @class = "control-label col-md-2" })
+                <div class="col-md-6">
+                    <p>
+                        <div id="workoutDate"></div>
+                        @Html.HiddenFor(model => model.WorkoutDate)
+                    </p>
+                    @*@Html.ValidationMessageFor(model => model.WorkoutDate, "", new { @class = "text-danger" })*@
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.WorkoutStart, new { @class = "control-label col-md-2" })
+                <div class="col-md-6">
+                    <p>
+                        @Html.EditorFor(model => model.WorkoutStart, new { htmlAttributes = new { @class = "form-control", @id = "workoutStart" } })
+                        @*<input id="workoutStart" type="text" class="form-control">*@
+                    </p>
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.WorkoutEnd, new { @class = "control-label col-md-2" })
+                <div class="col-md-6">
+                    <p>
+                        @Html.EditorFor(model => model.WorkoutEnd, new { htmlAttributes = new { @class = "form-control", @id = "workoutEnd" } })
+                        @*<input id="workoutEnd" type="text" class="form-control">*@
+                    </p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-6">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }
+</div>
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+    @section Scripts {
+        <script src="~/Scripts/jquery.datetimepicker.js"></script>
+        <script>
+
+            $("#workoutDate").datetimepicker({
+                lang: "en",
+                inline: true,
+                timepicker: false,
+                dayOfWeekStart: 1,
+                format: "y-m-d",
+                minDate: 0,
+                onChangeDateTime: function (dp, $input) {
+                    $('#WorkoutDate').val($input.val());
+                }
+            });
+
+            $("#workoutStart").datetimepicker({
+                datepicker: false,
+                format: "H:i"
+            });
+            $("#workoutEnd").datetimepicker({
+                datepicker: false,
+                format: "H:i"
+            });
+        </script>
+    }

@@ -1,0 +1,34 @@
+﻿@model List<WorkoutHelper.Domain.Models.ExerciseProgram>
+
+@{
+    ViewBag.Title = "ListMyPrograms";
+}
+
+<div>
+    <div class="tile-buttons">
+        <ul class="tile-buttons-list">
+
+            @if (Model != null && Model.Count > 0)
+            {
+                foreach (var menu in Model)
+                {
+                    <li>
+                        <a href="@Url.Action("Details", new { @id = menu.Id})">
+                            <h4>@menu.Title</h4>
+                            <h5>@menu.Level</h5>
+                            <h5>@menu.Category</h5>
+                        </a>
+                    </li>
+                }
+            }
+            else
+            {
+                <li>
+                    <h4>
+                        No programs available.
+                    </h4>
+                </li>
+            }
+        </ul>
+    </div>
+</div>

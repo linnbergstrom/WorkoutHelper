@@ -1,0 +1,30 @@
+﻿@model List<WorkoutHelper.Domain.Data.MenuItem>
+
+<div>
+    <div class="tile-buttons">
+        <ul class="tile-buttons-list">
+            @foreach (var menu in Model)
+            {
+                <li>
+                    @if (menu.IconLink == "")
+                    {
+                        menu.IconLink = "/Content/img/barbell.svg";
+                    }
+                        <a href="@Url.Action(menu.Action, menu.Controller)" class="navbar-brand">
+                        
+                                @menu.Title
+                           
+                            <div class="">
+                                <img src=@menu.IconLink />
+                            </div>
+                        </a>
+               
+                </li>
+            }
+        </ul>
+    </div>
+</div>
+
+@section Scripts {
+
+}

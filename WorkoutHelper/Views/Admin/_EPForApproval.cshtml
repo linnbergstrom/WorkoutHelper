@@ -1,0 +1,216 @@
+﻿@using WorkoutHelper.Domain.Models
+@model WorkoutHelper.ViewModels.AdminViewModel
+<div role="tabpanel" class="tab-pane" id="home">
+    <h2>Programs for approval</h2>
+    <table class="table table-striped">
+        <tr>
+            <th>Title</th>
+            <th>Creator</th>
+            <th>Skill Level</th>
+            <th>Category</th>
+            <th>Public</th>
+            <th>Approved</th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model.EPForApproval)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedBy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Level)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Public)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PublicApproved)
+                </td>
+                <th>
+                    @Ajax.ActionLink("Approve", "ApproveEP", new { @id = item.Id }, new AjaxOptions
+                        {
+                            HttpMethod = "Post",
+                            UpdateTargetId = "AdminContentDiv",
+                            OnComplete = "ShowHome"
+                        }
+                        , new { @class = "btn btn-success" })
+                    @Ajax.ActionLink("Disapprove", "DisapproveEP", new { @id = item.Id }, new AjaxOptions
+                        {
+                            HttpMethod = "Post",
+                            UpdateTargetId = "AdminContentDiv",
+                            OnComplete = "ShowHome"
+                        }, new { @class = "btn btn-warning" })
+                    @Html.ActionLink("Edit", "Edit", "ExerciseProgram", new { @id = item.Id }, new { @class = "btn btn-default" })
+                    @Html.ActionLink("Details", "Details", "ExerciseProgram", new { @id = item.Id }, new { @class = "btn btn-default" })
+                    @Ajax.ActionLink("Delete", "DeleteEP", new { @id = item.Id }, new AjaxOptions
+                       {
+                           HttpMethod = "Post",
+                           UpdateTargetId = "AdminContentDiv",
+                           OnComplete = "ShowHome"
+                       }, new { @class = "btn btn-danger" })
+                </th>
+            </tr>
+        }
+    </table>
+</div>
+@*Users*@
+<div role="tabpanel" class="tab-pane" id="users">
+    <h2>User</h2>
+    <p>@Html.ActionLink("Create New", "Create", "Account", null, new { @class = "btn btn-primary" })</p>
+    <table class="table table-striped">
+        <tr>
+            <th>Email</th>
+            <th>Email Confirmed</th>
+            <th>Edit</th>
+        </tr>
+
+        @foreach (var item in Model.Users)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @{if (item.UserEmailConfirmed)
+                    {
+                        <p>True</p>
+                    } else
+                    {
+                        <p>False</p>
+                    }
+                    }
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", "Account", new { @id = item.Id }, new { @class = "btn btn-default" })
+                    @*@Html.ActionLink("Details", "Details", "Account", new { @id = item.Id }, new { @class = "btn btn-default" })*@
+                    @Html.ActionLink("Delete", "Delete", "Account", new { @id = item.Id }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+@*Exercises*@
+<div role="tabpanel" class="tab-pane" id="exercises">
+    <h2>Exercise</h2>
+    <p>@Html.ActionLink("Create New", "Create", "Exercise", null, new { @class = "btn btn-primary" })</p>
+    <table class="table table-striped">
+        <tr>
+            <th>Title</th>
+            <th>Exercise Type</th>
+            <th>Skill Level</th>
+            <th>Main Muscle</th>
+            <th>Force</th>
+            <th>Public</th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.Exercises)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ExerciseType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Level)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MainMuscle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Force)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Public)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", "Exercise", new { @id = item.Id }, new { @class = "btn btn-default" })
+                    @Html.ActionLink("Details", "Details", "Exercise", new { @id = item.Id }, new { @class = "btn btn-default" })
+                    @Ajax.ActionLink("Delete", "DeleteExercise", new { @id = item.Id }, new AjaxOptions
+                       {
+                           HttpMethod = "Post",
+                           UpdateTargetId = "AdminContentDiv",
+                           OnComplete = "ShowExercises"
+                       }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+
+        }
+    </table>
+</div>
+@*Programs*@
+<div role="tabpanel" class="tab-pane" id="programs">
+    <h2>Programs</h2>
+    <p>@Html.ActionLink("Create New", "Create", "ExerciseProgram", null, new { @class = "btn btn-primary" })</p>
+    <table class="table table-striped">
+        <tr>
+            <th>Title</th>
+            <th>Creator</th>
+            <th>Skill Level</th>
+            <th>Exercise Type</th>
+            <th>Public</th>
+            <th>Approved</th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.ApprovedExercisePrograms)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedBy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Level)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Public)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PublicApproved)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", "ExerciseProgram", new { @id = item.Id }, new { @class = "btn btn-default" })
+
+                    @Html.ActionLink("Details", "Details", "ExerciseProgram", new { @id = item.Id }, new { @class = "btn btn-default" })
+
+                    @Ajax.ActionLink("Disapprove", "DisapproveEP", new { @id = item.Id },
+                         new AjaxOptions {                               
+                                   HttpMethod = "Post",
+                                   UpdateTargetId = "AdminContentDiv",
+                                   OnComplete = "ShowEP"
+                                }, new { @class = "btn btn-warning" })
+
+                    @Ajax.ActionLink("Reconsider", "ReconsiderEP", new { @id = item.Id },
+                         new AjaxOptions {                               
+                                   HttpMethod = "Post",
+                                   UpdateTargetId = "AdminContentDiv",
+                                   OnComplete = "ShowEP"
+                               }, new { @class = "btn btn-info" })
+
+                    @Ajax.ActionLink("Delete", "DeleteEP", new { @id = item.Id }, new AjaxOptions
+                       {
+                           HttpMethod = "Post",
+                           UpdateTargetId = "AdminContentDiv",
+                           OnComplete = "ShowEP"
+                       }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+    </table>
+</div>

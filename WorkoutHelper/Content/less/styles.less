@@ -1,0 +1,153 @@
+﻿@import "bootstrap/bootstrap.less";
+@import "bootstrap/mixins";
+
+@gray-lighter: #E6F5FF;
+@gray-light: #3188DD;
+/*@gray-base: #03124e;*/
+
+@text-color: #265092;
+
+//Navbar
+@navbar-default-color: @gray-light;
+@navbar-default-bg: @gray-lighter;
+
+// Navbar links
+@navbar-default-link-color: @gray-light;
+@navbar-default-link-hover-color: @gray-dark;
+@navbar-default-link-active-color: @gray;
+
+// Navbar brand label
+@navbar-default-brand-color: @navbar-default-link-color;
+
+// Navbar toggle
+@navbar-default-toggle-hover-bg: #ddd;
+@navbar-default-toggle-icon-bar-bg: #888;
+@navbar-default-toggle-border-color: #ddd;
+
+@media (min-width: 768px) {
+    .tile-buttons {
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .navbar-right {
+        margin-right: 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .tile-buttons li {
+        width: 12.5%;
+        font-size: 13px;
+    }
+}
+
+body {
+    font-size: 16px;
+}
+
+.workoutElements {
+    font-size: 18px;
+
+    table {
+        table-layout: fixed;
+    }
+
+    .form-control {
+        height: 36px;
+        font-size: 16px;
+    }
+
+    td {
+        padding: 2px;
+        border-top: none;
+    }
+}
+
+.tile-buttons-list {
+    padding-left: 0;
+    list-style: none;
+}
+
+.tile-buttons {
+    margin: 0 -10px 20px;
+    overflow: hidden;
+
+    li {
+        float: left;
+        width: 33%;
+        height: 115px;
+        font-size: 15px;
+        line-height: 1.4;
+        text-align: center;
+        background-color: @gray-lighter;
+        border: 5px solid #fff;
+
+        :hover {
+            background: #ffeb79;
+            cursor: pointer;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        height: 115px;
+        display: block;
+        float: none;
+        padding: 10px;
+
+        :hover {
+            text-decoration: none;
+        }
+    }
+}
+
+.tile-buttons-small {
+    li {
+        width: 20%;
+        height: 100px;
+        line-height: 1.4;
+        text-align: left;
+    }
+
+    a {
+        height: 90px;
+    }
+}
+
+#workoutsTable {
+    .workoutTableLink {
+        padding: 0 !important;
+
+        a {
+            display: block;
+            float: none;
+            padding: 12px;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: none;
+                color: @brand-warning;
+            }
+        }
+    }
+
+    .OldLink {
+        color: @gray;
+    }
+
+    .TodayLink {
+        color: @gray-base;
+    }
+}
+
+.ui-widget {
+    font-size: 1.0em;
+}
+
+li.ui-state-default.ui-corner-top.ui-tabs-active.ui-state-active {
+  border-bottom: 1px solid white;
+  :focus {
+  outline: none;
+}
+}

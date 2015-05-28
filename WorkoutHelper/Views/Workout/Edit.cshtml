@@ -1,0 +1,230 @@
+﻿@using WorkoutHelper.Domain.Models
+@model WorkoutHelper.ViewModels.WorkoutViewModel
+
+<link href="~/Content/css/jquery-ui.css" rel="stylesheet" />
+<link href="~/Content/jquery.datetimepicker.css" rel="stylesheet" />
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="col-md-12">
+        <div class="form-horizontal">
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.Id)
+            @Html.HiddenFor(model => model.ExerciseProgramId)
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Title, new { @class = "control-label col-md-2 xs-col-2" })
+                <div class="col-md-6">
+                    @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.WorkoutDate, new { @class = "control-label col-md-2" })
+                <div class="col-md-6">
+                    <p>
+                        <div id="workoutDate"></div>
+                        @Html.HiddenFor(model => model.WorkoutDate)
+                    </p>
+                    @Html.ValidationMessageFor(model => model.WorkoutDate, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.WorkoutStart, new { @class = "control-label col-md-2" })
+                <div class="col-md-6">
+                    <p>
+                        @Html.EditorFor(model => model.WorkoutStart, new { htmlAttributes = new { @class = "form-control", @id = "workoutStart" } })
+                        @*<input id="workoutStart" type="text" class="form-control">*@
+                    </p>
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.WorkoutEnd, new { @class = "control-label col-md-2" })
+                <div class="col-md-6">
+                    <p>
+                        @Html.EditorFor(model => model.WorkoutEnd, new { htmlAttributes = new { @class = "form-control", @id = "workoutEnd" } })
+                        @*<input id="workoutEnd" type="text" class="form-control">*@
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        @*End Top Part*@
+        <div class="form-group">
+            <div class="col-md-12">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+        <div class=" co-xs-12 col-md-11 col-md-offset-1 workoutElements">
+            <h3>Exercises</h3>
+            <table class="table table-striped" id="workoutsTable">
+                <tr>
+                    <th>Exercise</th>
+                    <th>Sets</th>
+                    <th>Reps</th>
+                    <th>Time</th>
+                    <th>Distance</th>
+                    <th></th>
+                </tr>
+
+                @if (Model.ExerciseElements != null)
+                {
+                    for (var i = 0; i < Model.ExerciseElements.Count - 1; i++)
+                    {
+                        <tr>
+                            <td>
+                                @Html.HiddenFor(m => Model.ExerciseElements[i].Id)
+                                @Html.HiddenFor(m => Model.ExerciseElements[i].ExerciseName)
+                                <p>@Html.DisplayFor(m => Model.ExerciseElements[i].ExerciseName)</p>
+                            </td>
+                            <td>
+                                @Html.EditorFor(m => Model.ExerciseElements[i].Sets, new { htmlAttributes = new { @class = "form-control goalGroup", @id = "setsInput" } })
+                                @Html.ValidationMessageFor(m => Model.ExerciseElements[i].Sets, "", new { @class = "text-danger" })
+                        </td>
+                            <td>@Html.EditorFor(m => Model.ExerciseElements[i].Reps, new { htmlAttributes = new { @class = "form-control goalGroup", @id = "repsInput" } })</td>
+                            <td>@Html.EditorFor(m => Model.ExerciseElements[i].Time, new { htmlAttributes = new { @class = "form-control goalGroup", @id = "timeInput" } })</td>
+                            <td>@Html.EditorFor(m => Model.ExerciseElements[i].Distance, new { htmlAttributes = new { @class = "form-control goalGroup", @id = "distanceInput" } })</td>
+                            <td>
+                                @Ajax.ActionLink("Delete", "DeleteElement", new { @id = Model.ExerciseElements[i].Id }, new AjaxOptions
+                                   {
+                                       HttpMethod = "Post",
+                                       UpdateTargetId = "workoutElements"
+                                   }, new { @class = "btn btn-danger" })
+                            </td>
+                        </tr>
+
+                    }
+
+                }
+            </table>
+        </div>
+    </div>
+}
+<div class="col-md-12">
+    @*@Html.Partial("_AddElement")*@
+    @*
+    <div class=" co-xs-12 col-md-11 col-md-offset-1 workoutElements">
+        <table class="table table-striped">
+            <tr>
+                @*<th>Exercise</th>
+                <th>Sets</th>
+                <th>Reps</th>
+                <th>Time</th>
+                <th>Distance</th>
+                <th></th>
+            </tr>
+            <tr>
+                @using (Ajax.BeginForm("AddElement", "Workout", new AjaxOptions
+                {
+                    HttpMethod = "POST",
+                    OnSuccess = "OnSuccess",
+                    OnFailure = "OnFailure",
+                    UpdateTargetId = "workoutElements",
+                    InsertionMode = InsertionMode.InsertAfter
+                }))
+                {
+                    var i = Model.ExerciseElements.Count-1;
+                    var element = Model.ExerciseElements.Last();
+                    <td>
+                        <p>@Html.EditorFor(m => element.ExerciseName, new { htmlAttributes = new { @class = "form-control", @id = "exerciseInput" } })</p>
+                    </td>
+                    <td>
+                        @Html.EditorFor(m => element.Sets, new { htmlAttributes = new { @class = "form-control goalGroup", @id = "setsInput" } })
+                        @Html.ValidationMessageFor(m => element.Sets, "", new { @class = "text-danger" })
+                    </td>
+                    <td>@Html.EditorFor(m => element.Reps, new { htmlAttributes = new { @class = "form-control goalGroup", @id = "repsInput" } })</td>
+                    <td>@Html.EditorFor(m => element.Time, new { htmlAttributes = new { @class = "form-control goalGroup", @id = "timeInput" } })</td>
+                    <td>@Html.EditorFor(m => element.Distance, new { htmlAttributes = new { @class = "form-control goalGroup", @id = "distanceInput" } })</td>
+                    <td></td>
+                    @*<td><input type="text" id="exerciseInput" class="form-control" /></td>
+    <td><input type="text" id="setsInput" class="form-control goalGroup" /></td>
+    <td><input type="text" id="repsInput" class="form-control goalGroup" /></td>
+    <td><input type="text" id="timeInput" class="form-control goalGroup" /></td>
+    <td><input type="text" id="distanceInput" class="form-control goalGroup" /></td>
+                    <td><p><input type="submit" name="AddElement" value="Add Exercise" class="btn btn-info" /></td>
+                }
+            </tr>
+
+        </table>
+    </div>*@
+</div>
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @*<script src="~/Scripts/additional-methods.js"></script>*@
+    <script src="~/Scripts/jquery-ui-1.11.4.js"></script>
+    <script src="~/Scripts/jquery.datetimepicker.js"></script>
+
+    <script>
+
+        function OnSuccess(data) {
+            {
+                $("#workoutsTable").append
+            }
+
+            //add element
+            //clear inputs
+        }
+
+
+        $("#workoutDate").datetimepicker({
+            lang: "en",
+            inline: true,
+            timepicker: false,
+            dayOfWeekStart: 1,
+            format: "y-m-d",
+            minDate: 0,
+            onChangeDateTime: function (dp, $input) {
+                $('#WorkoutDate').val($input.val());
+            }
+        });
+
+        $("#workoutStart").datetimepicker({
+            datepicker: false,
+            format: "H:i"
+        });
+        $("#workoutEnd").datetimepicker({
+            datepicker: false,
+            format: "H:i"
+        });
+
+        $("#exerciseInput").autocomplete({
+            minLength: 0,
+            source: function (request, response) {
+                //request= current value. response: suggested data
+                $.ajax({
+                    url: "@Url.Action("ExerciseAutocomplete", "ExerciseProgram")",
+                    dataType: "json",
+                    data: { query: request.term },
+                    success: function (data) {
+                        response($.map(data, function (item) {
+                            return {
+                                label: item.Value,
+                                id: item.Key
+                            };
+                        }));
+                    }
+                });
+            },
+            select: function (event, ui) {
+                $("#exerciseInput").val(ui.item.label);
+                $("#exerciseId").val(ui.item.id);
+                //ui.item.value = ui.item.label;
+            },
+            change: function (event, ui) {
+                if (!ui.item) {
+                    $("#exerciseInput").val("");
+                }
+            }
+        });
+        $("#exerciseInput").focus(function () {
+            $(this).autocomplete("search", $(this).val());
+        })
+    </script>
+}

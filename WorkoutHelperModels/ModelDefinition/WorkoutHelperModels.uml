@@ -1,0 +1,1029 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel"
+  dslVersion="1.0.0.0"
+  Id="e91547d4-3fd6-4f5a-9933-e52a5c017928"
+  name="WorkoutHelperModels" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <actor
+        Id="e5cdc83c-9cbf-4f8f-a6fe-0aae64b1699a"
+        name="User"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="6d57f2fa-6046-45e3-ba9f-ba278ef24d40"
+            isDerived="false"
+            sourceEndRoleName="Actor1"
+            targetEndRoleName="Create new Workout"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="235b4d08-5655-44ba-b30b-275b253e60c1"
+              LastKnownName="Create new Workout"
+              LastKnownLocation="WorkoutHelperModels.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4ccdef45-36af-4a3b-b825-53aca53da4e3"
+                  name="Actor1"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="30ad32b5-3ec5-4cff-bf9d-59de92b7ad3c"
+                  name="Create new Workout"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="96d2e26d-18ab-4163-a94d-8d61a76c3839"
+            isDerived="false"
+            sourceEndRoleName="User"
+            targetEndRoleName="Create new Program"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="304239cf-5717-49fb-a68c-be1ef34995ed"
+              LastKnownName="Create new Program"
+              LastKnownLocation="WorkoutHelperModels.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5a096fce-ab2b-4901-b50f-ff87bc70c5ed"
+                  name="User"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d2edaef3-f505-4cc9-8948-9fac842b14af"
+                  name="Create new Program"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="4e9708b0-3ca1-414c-a385-16aedb913928"
+            isDerived="false"
+            sourceEndRoleName="User"
+            targetEndRoleName="Start new Program"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="a4ed9d12-7bab-4430-b25d-e9522a5bfa56"
+              LastKnownName="Create new Program"
+              LastKnownLocation="WorkoutHelperModels.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="76aec6f9-21a8-4966-a2ce-edffc1145771"
+                  name="User"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1ed7afe0-d22e-4445-b8da-5d441aaa7eaa"
+                  name="Start new Program"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="95363150-d8e7-4c05-98b8-061602373295"
+            isDerived="false"
+            sourceEndRoleName="User"
+            targetEndRoleName="Select Workout"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="91699564-0955-4faf-8617-6694e1fc3319"
+              LastKnownName="Select Workout"
+              LastKnownLocation="WorkoutHelperModels.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ca39215d-1647-40ed-91f9-3b5bd9658113"
+                  name="User"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="65a7972a-86d0-4d21-8fb2-a4df60c62f0e"
+                  name="Select Workout"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <subsystem
+        Id="e01858ad-f7f0-4e74-ab88-755b041a9fe2"
+        name="Workout Helper"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="235b4d08-5655-44ba-b30b-275b253e60c1"
+        name="Create new Workout"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="5569dce3-25d3-4c22-9a79-a4ea4cfce420"
+            isDerived="false"
+            sourceEndRoleName="Create new Workout"
+            targetEndRoleName="Select Program"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="d318f481-7dac-4c29-9ad8-c087ad75bdd9"
+              LastKnownName="Select Program"
+              LastKnownLocation="WorkoutHelperModels.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="12893f6d-9009-485b-ab14-edbf489d71f5"
+                  name="Create new Workout"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="56724217-d016-4582-8d0c-246665b24743"
+                  name="Select Program"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="1000daed-7afb-45ab-94b5-cb28ace3a760"
+            isDerived="false"
+            sourceEndRoleName="Create new Workout"
+            targetEndRoleName="Add/remove Exercises"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="516f20dd-4f5a-4282-88ce-d65e4aee4db0"
+              LastKnownName="Add/remove Exercises"
+              LastKnownLocation="WorkoutHelperModels.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="bdee5403-8bc8-4253-8fa0-89b8611d1923"
+                  name="Create new Workout"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7c618953-ee33-423b-862e-9f491627ec25"
+                  name="Add/remove Exercises"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <extendedCases>
+          <extend
+            Id="e2528be7-b1ca-4567-a270-b32d5e527577">
+            <useCaseMoniker
+              Id="c5f57116-cf77-4c1b-9171-8a87cf414fb9"
+              LastKnownName="Document Exercises"
+              LastKnownLocation="WorkoutHelperModels.uml" />
+          </extend>
+        </extendedCases>
+        <subjects>
+          <subsystemMoniker
+            Id="e01858ad-f7f0-4e74-ab88-755b041a9fe2"
+            LastKnownName="Workout Helper"
+            LastKnownLocation="WorkoutHelperModels.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="5ac55adf-8e85-4903-8310-7d438aa2ad21"
+        name="ActivityDiagram1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="81fb2b13-c428-4a8c-a0de-890b31615676"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="7505be42-e090-44d7-b3c9-b1a0ccf550c2"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="2367fa89-3a58-42eb-8615-cd07ee938577"
+                  LastKnownName="Start Workout"
+                  LastKnownLocation="WorkoutHelperModels.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="0893297b-40f9-4d02-a6f8-88228ebe9b6f"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="2cf62c63-cfd3-4f48-8de5-1226c5b079ac"
+                  LastKnownName="Create Workout"
+                  LastKnownLocation="WorkoutHelperModels.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="2cf62c63-cfd3-4f48-8de5-1226c5b079ac"
+            name="Create Workout"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="ff18b264-d65f-418b-92ea-433dfae55cef"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="8d23d710-9174-4de5-b540-7dab3071f493"
+                  LastKnownName="Select Program"
+                  LastKnownLocation="WorkoutHelperModels.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="8d23d710-9174-4de5-b540-7dab3071f493"
+            name="Select Program"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="2b9ae0bb-bab7-40ba-b0d5-a04056b904ee"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="4abb4a7e-9d8c-4f9f-8d7f-d4f9d7f1aea1"
+                  LastKnownName="Document Program Element"
+                  LastKnownLocation="WorkoutHelperModels.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="4abb4a7e-9d8c-4f9f-8d7f-d4f9d7f1aea1"
+            name="Document Program Element"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="5e5f86cf-8564-4312-8506-330e4363716b"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="296ba852-8488-4014-b29e-5914d0e758db"
+                  LastKnownName="Register More"
+                  LastKnownLocation="WorkoutHelperModels.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="296ba852-8488-4014-b29e-5914d0e758db"
+            name="Register More"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="7f857496-79ca-4f30-8952-61b199eb7bfc"
+                guard="Add More"
+                name="Add More"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="4abb4a7e-9d8c-4f9f-8d7f-d4f9d7f1aea1"
+                  LastKnownName="Document Program Element"
+                  LastKnownLocation="WorkoutHelperModels.uml" />
+                <description>Add More</description>
+              </controlFlow>
+              <controlFlow
+                Id="b1d0ade0-4b67-4522-9878-c1f0cb942fa6"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="a3d2d357-8bd9-40ea-b44c-bbc077a3bd58"
+                  LastKnownName="Save Workout"
+                  LastKnownLocation="WorkoutHelperModels.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="a3d2d357-8bd9-40ea-b44c-bbc077a3bd58"
+            name="Save Workout"
+            isLeaf="false" />
+          <opaqueAction
+            Id="2367fa89-3a58-42eb-8615-cd07ee938577"
+            name="Start Workout"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="a9c8efb8-1114-4db6-bb3e-fe702e290f64"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="4abb4a7e-9d8c-4f9f-8d7f-d4f9d7f1aea1"
+                  LastKnownName="Document Program Element"
+                  LastKnownLocation="WorkoutHelperModels.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <initialNode
+            Id="ac7f86f6-37da-485e-8f1f-a9d4b03220c0"
+            name="Initial2"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="f4b90b5c-91f7-43d2-9be4-f8a576e41a51"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="f2de8624-8890-44f2-980b-f4fc0cebd279"
+                  LastKnownName="Create New Program"
+                  LastKnownLocation="WorkoutHelperModels.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="f2de8624-8890-44f2-980b-f4fc0cebd279"
+            name="Create New Program"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="f83ba5fb-2309-4d9e-98f4-2d904cab147b"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="223478e2-02a2-4355-b3ee-356a48657cf2"
+                  LastKnownName="Plan Weeks"
+                  LastKnownLocation="WorkoutHelperModels.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="f2b30e3d-2e4c-49a6-be63-8fbeb3f22a7b"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="a5e40d26-ae67-4d46-9d00-3ee4fd331fad"
+                  LastKnownName="Create Program Elements"
+                  LastKnownLocation="WorkoutHelperModels.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="a5e40d26-ae67-4d46-9d00-3ee4fd331fad"
+            name="Create Program Elements"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="86360286-80f3-4859-adf0-3cdae48d7d65"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="ed5032bb-d6ef-4886-ba38-95a5903984c3"
+                  LastKnownName="Add Exercises"
+                  LastKnownLocation="WorkoutHelperModels.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="ed5032bb-d6ef-4886-ba38-95a5903984c3"
+            name="Add Exercises"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="950e234d-585c-4611-9827-2ba357bc8d62"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="3af2e930-cd60-4955-a28a-9c69081cbfeb"
+                  LastKnownName="Decision1"
+                  LastKnownLocation="WorkoutHelperModels.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="3af2e930-cd60-4955-a28a-9c69081cbfeb"
+            name="Decision1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="1f3fb2b5-91ba-49e2-a3da-4bd406689556"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="223478e2-02a2-4355-b3ee-356a48657cf2"
+                  LastKnownName="Plan Weeks"
+                  LastKnownLocation="WorkoutHelperModels.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="776df625-18e1-4764-8017-70927cb0a804"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="a5e40d26-ae67-4d46-9d00-3ee4fd331fad"
+                  LastKnownName="Create Program Elements"
+                  LastKnownLocation="WorkoutHelperModels.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="223478e2-02a2-4355-b3ee-356a48657cf2"
+            name="Plan Weeks"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="f94b6710-b10c-4d11-8e79-3ce06efefecb"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="6a0b44dd-d026-49e8-afb5-4b66b86523f3"
+                  LastKnownName="Add Workouts"
+                  LastKnownLocation="WorkoutHelperModels.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="6a0b44dd-d026-49e8-afb5-4b66b86523f3"
+            name="Add Workouts"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="c83b7d16-afa3-4b49-af15-c145c7f2c12f"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="c7a0a112-da3e-4d7a-902d-460f0485f044"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="WorkoutHelperModels.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode
+            Id="c7a0a112-da3e-4d7a-902d-460f0485f044"
+            name="ActivityFinal1"
+            isLeaf="false" />
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="7d866597-f693-4dcc-a413-fb7e9abb6451"
+        name="Admin"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="59615578-e57a-4cc5-9ecf-364238249a51"
+            isDerived="false"
+            sourceEndRoleName="Admin"
+            targetEndRoleName="Create new Program"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="304239cf-5717-49fb-a68c-be1ef34995ed"
+              LastKnownName="Create new Program"
+              LastKnownLocation="WorkoutHelperModels.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="eb840a6f-6fbd-4b77-a4a4-7c8af43514a9"
+                  name="Admin"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5e917eeb-645b-4d28-bd07-49b588cd6281"
+                  name="Create new Program"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="bc452d82-f14a-4f4f-b4bc-7cccd7360c49"
+            isDerived="false"
+            sourceEndRoleName="Admin"
+            targetEndRoleName="Edit Accounts"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="ff87a071-3729-47ab-8a66-72475e25824d"
+              LastKnownName="Edit Accounts"
+              LastKnownLocation="WorkoutHelperModels.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7a1cf552-6c9a-45f5-9f7f-059b03de254c"
+                  name="Admin"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b8f17e93-590d-470f-8cc0-7a858e17e0bf"
+                  name="Edit Accounts"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="aea8f9bd-58ce-402f-9b76-48ed6a76fec0"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="268a23ff-d658-488d-ae15-c8775bdd4ea6"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="5fd21fc4-c112-4805-a22d-92c457f18e1e"
+            isDerived="false"
+            sourceEndRoleName="Admin"
+            targetEndRoleName="Approve Programs"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="904680b6-d149-4dae-aede-b425c15d71c9"
+              LastKnownName="Approve Programs"
+              LastKnownLocation="WorkoutHelperModels.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="9dca54b4-1322-4aba-9c75-90a6a0ba055b"
+                  name="Admin"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="fde904cb-40bd-44d2-b502-a9a610c4c4d6"
+                  name="Approve Programs"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="e38cfa06-23c4-43f8-bc0e-9d3ce3dd99c0"
+            isDerived="false"
+            sourceEndRoleName="Admin"
+            targetEndRoleName="Create Exercises"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="61fd3175-aa00-4350-aeaf-9a4627ea62e3"
+              LastKnownName="Create Exercises"
+              LastKnownLocation="WorkoutHelperModels.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d9d6ae50-5b19-49fd-b85a-38b65f230468"
+                  name="Admin"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="42b4ef1b-7b44-417c-be4f-a6a4c42e99c9"
+                  name="Create Exercises"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="304239cf-5717-49fb-a68c-be1ef34995ed"
+        name="Create new Program"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="861ed3bb-7205-40a9-84a0-dc60e872c307"
+            isDerived="false"
+            sourceEndRoleName="Create new Program"
+            targetEndRoleName="Add/remove Exercises"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="516f20dd-4f5a-4282-88ce-d65e4aee4db0"
+              LastKnownName="Add/remove Exercises"
+              LastKnownLocation="WorkoutHelperModels.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="30229fe9-0e69-4524-885b-0c9282811d89"
+                  name="Create new Program"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b1fbc23c-7bef-4610-a0a5-f31ff70b42fd"
+                  name="Add/remove Exercises"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="9303f433-e0f2-424c-a605-80c1c73970e2"
+            isDerived="false"
+            sourceEndRoleName="Create new Program"
+            targetEndRoleName="Create new Workout"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="235b4d08-5655-44ba-b30b-275b253e60c1"
+              LastKnownName="Create new Workout"
+              LastKnownLocation="WorkoutHelperModels.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="44446958-0d41-4aff-a7c9-3a7d1b23c9b3"
+                  name="Create new Program"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5d3105f6-8922-4870-b062-e8756a6b7b9c"
+                  name="Create new Workout"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <additions>
+          <include
+            Id="abcae41e-446f-4484-83be-2a01010f8707">
+            <useCaseMoniker
+              Id="2b9f4bf5-4c5c-4214-b44d-c2f0ad31a5a5"
+              LastKnownName="Add Program Elements"
+              LastKnownLocation="WorkoutHelperModels.uml" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker
+            Id="e01858ad-f7f0-4e74-ab88-755b041a9fe2"
+            LastKnownName="Workout Helper"
+            LastKnownLocation="WorkoutHelperModels.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="d318f481-7dac-4c29-9ad8-c087ad75bdd9"
+        name="Select Program"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="2df8446f-9e35-4a4c-8c89-d3499757b648">
+            <useCaseMoniker
+              Id="c5f57116-cf77-4c1b-9171-8a87cf414fb9"
+              LastKnownName="Document Exercises"
+              LastKnownLocation="WorkoutHelperModels.uml" />
+          </extend>
+        </extendedCases>
+        <subjects>
+          <subsystemMoniker
+            Id="e01858ad-f7f0-4e74-ab88-755b041a9fe2"
+            LastKnownName="Workout Helper"
+            LastKnownLocation="WorkoutHelperModels.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="c5f57116-cf77-4c1b-9171-8a87cf414fb9"
+        name="Document Exercises"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="e01858ad-f7f0-4e74-ab88-755b041a9fe2"
+            LastKnownName="Workout Helper"
+            LastKnownLocation="WorkoutHelperModels.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="ff87a071-3729-47ab-8a66-72475e25824d"
+        name="Edit Accounts"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="e01858ad-f7f0-4e74-ab88-755b041a9fe2"
+            LastKnownName="Workout Helper"
+            LastKnownLocation="WorkoutHelperModels.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="2b9f4bf5-4c5c-4214-b44d-c2f0ad31a5a5"
+        name="Add Program Elements"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="a4ed9d12-7bab-4430-b25d-e9522a5bfa56"
+        name="Create new Program"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="f11759dc-e053-4a8c-9f3f-f26f53ee94b7"
+        name="Add Workouts"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="e01858ad-f7f0-4e74-ab88-755b041a9fe2"
+            LastKnownName="Workout Helper"
+            LastKnownLocation="WorkoutHelperModels.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="904680b6-d149-4dae-aede-b425c15d71c9"
+        name="Approve Programs"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="e01858ad-f7f0-4e74-ab88-755b041a9fe2"
+            LastKnownName="Workout Helper"
+            LastKnownLocation="WorkoutHelperModels.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="61fd3175-aa00-4350-aeaf-9a4627ea62e3"
+        name="Create Exercises"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="e01858ad-f7f0-4e74-ab88-755b041a9fe2"
+            LastKnownName="Workout Helper"
+            LastKnownLocation="WorkoutHelperModels.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="516f20dd-4f5a-4282-88ce-d65e4aee4db0"
+        name="Add/remove Exercises"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="e01858ad-f7f0-4e74-ab88-755b041a9fe2"
+            LastKnownName="Workout Helper"
+            LastKnownLocation="WorkoutHelperModels.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="91699564-0955-4faf-8617-6694e1fc3319"
+        name="Select Workout"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="461a466c-11d9-48eb-8921-9506310504fe"
+            isDerived="false"
+            sourceEndRoleName="Select Workout"
+            targetEndRoleName="Document Exercises"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="c5f57116-cf77-4c1b-9171-8a87cf414fb9"
+              LastKnownName="Document Exercises"
+              LastKnownLocation="WorkoutHelperModels.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f8a1974c-9381-4d93-a217-b8f1a797d1e9"
+                  name="Select Workout"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="de6f7d33-ef32-4426-9bce-543b714d060c"
+                  name="Document Exercises"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <subjects>
+          <subsystemMoniker
+            Id="e01858ad-f7f0-4e74-ab88-755b041a9fe2"
+            LastKnownName="Workout Helper"
+            LastKnownLocation="WorkoutHelperModels.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>

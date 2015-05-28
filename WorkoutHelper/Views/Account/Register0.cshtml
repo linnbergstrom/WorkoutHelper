@@ -1,0 +1,42 @@
+﻿@model WorkoutHelper.ViewModels.RegisterViewModel
+
+<div class="small-12 large-8 columns">
+
+    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new {data_abide = ""}))
+    {
+        @Html.AntiForgeryToken()
+        <fieldset>
+            <legend>Register Account</legend>
+            <div class="row">
+                <div class="small-12 columns">
+                    @Html.LabelFor(model => model.Name, new {required pattern = ""[a-zA-Z]+})
+                    @Html.EditorFor(model => model.Name, new {htmlAttributes = new {@class = ""}})
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-12 columns">
+                    @Html.LabelFor(model => model.Email, new {@class = ""})
+
+                    @Html.EditorFor(model => model.Email, new {htmlAttributes = new {@class = ""}})
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-12 columns">
+                    @Html.LabelFor(model => model.Password, new {@class = ""})
+                    @Html.EditorFor(model => model.Password, new {htmlAttributes = new {@class = ""}})
+                </div>
+            </div>
+            <div class="row">
+                <d4iv class="small-12 columns">
+                    @Html.LabelFor(model => model.ConfirmPassword, new {@class = ""})
+                    @Html.EditorFor(model => model.ConfirmPassword, new {htmlAttributes = new {@class = ""}})
+                </d4iv>
+            </div>
+
+            @Html.ActionLink("Back to Start", "Index", "Home", null, new {@class = "secondary button"})
+            <input type="submit" value="Save" class="button"/>
+            @*
+                @Html.ActionLink("Save", "Index", null, new { @class = "button" })*@
+        </fieldset>
+    }
+</div>

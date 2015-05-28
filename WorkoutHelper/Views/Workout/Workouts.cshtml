@@ -1,0 +1,72 @@
+﻿@model List<WorkoutHelper.Domain.Models.Workout>
+@{
+    ViewBag.Title = "Workouts";
+}
+
+<div class="col-md-3">
+    <div class="">
+        <h3>Chose Workout</h3>
+        <p>Click one to start or edit.</p>
+    </div>
+
+    @if (ViewBag.ShowNote == "true")
+    {
+        <div class="panel panel-info">
+            <div class="panel-heading"></div>
+            <div class="panel-body">
+                <h6></h6>
+            </div>
+        </div>
+    }
+</div>
+
+<div class="table-responsive col-md-9">
+    <table class="table table-bordered table-hover" id="workoutsTable">
+        <thead>
+            <tr>
+                <th>Workout Name</th>
+                <th>Date</th>
+                <th>Starting</th>
+                <th>Ending</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var workout in Model)
+            {
+                <tr>
+                    <td class="workoutTableLink"><a href="@Url.Action("Edit", new { @id = workout.Id })">@workout.Title</a></td>
+                    <td>@workout.WorkoutDate.ToString("yyyy-MM-dd")</td>
+                    <td>
+                        @if (workout.WorkoutStart != null)
+                        {
+                            @workout.WorkoutStart.Value.ToString("t")
+                        }
+                    </td>
+                    <td>
+                        @if (workout.WorkoutEnd != null)
+                        {
+                            @workout.WorkoutEnd.Value.ToString("t")
+                        }
+                    </td>
+
+                    <td>
+                        @*@Html.ActionLink("Details", "Details", new { id = @workout.Id }, new { @class = "btn btn-info" })*@
+                        @Ajax.ActionLink("Delete", "Delete", new { id = workout.Id }, new AjaxOptions
+                                {
+                                    Confirm = "Confirm Delete",
+                                    HttpMethod = "DELETE",
+                                    UpdateTargetId = "workoutsTable",
+                                    InsertionMode = InsertionMode.Replace
+                                },
+                                new { @class = "btn btn-danger" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@section Scripts {
+
+}

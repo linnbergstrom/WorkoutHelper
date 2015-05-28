@@ -1,0 +1,85 @@
+﻿@using Microsoft.AspNet.Identity
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Bun Workout</title>
+    @*Set the viewport width to device width for mobile *@
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link href="~/Content/css/normalize.css" rel="stylesheet"/>
+    @Styles.Render("~/Content/bootstrap")
+    @*<link href="~/Content/Metro.css" rel="stylesheet" />*@
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+
+    <div class="container-fluid">
+        <nav class="navbar navbar-default">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @*<a class="navbar-brand" href="/Workout/Index">Bun Workout</a>*@
+                @Html.ActionLink("Workout Helper", "Index", "Workout", null, new {@class="navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                {
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Workouts", "Index", "Workout")</li>
+                        <li>@Html.ActionLink("Programs", "Index", "ExerciseProgram")</li>
+                        <li>@Html.ActionLink("Calendar", "Index", "Calendar")</li>
+                        <li>@Html.ActionLink("Admin", "Index", "Admin")</li>
+                    </ul>
+                }
+                else if(Request.IsAuthenticated)
+                {
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Workouts", "Index", "Workout")</li>
+                        <li>@Html.ActionLink("Programs", "Index", "ExerciseProgram")</li>
+                        <li>@Html.ActionLink("Calendar", "Index", "Calendar")</li>
+                    </ul>
+                }
+
+                @Html.Partial("_LoginPartial")
+            </div><!--/.nav-collapse -->
+
+        </nav>
+    </div><!--/.container-fluid -->
+<div class="container-fluid">
+    <div class="row">
+        @*for desktops*@
+        @*<div class="col-md-3 hidden-xs hidden-sm">
+            @RenderSection("RightMenu", false)
+            @Html.Partial("_RightMenu")
+        </div>*@
+        @*end*@
+        <div class="col-sm-12 col-md-12">
+            @RenderBody()
+        </div>
+    </div>
+
+    <footer class="row">
+        <div class="col-md-12">
+            <hr/>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; Copyright Linn Bergström.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@*Use the Scripts section to define page specific scripts*@
+@RenderSection("scripts", false)
+</body>
+</html>

@@ -1,0 +1,46 @@
+﻿* {
+	border-radius: 0 !important;
+	max-width: 1300px;
+}
+
+.navbar {
+	border: none;
+	margin-bottom: 20px;
+	margin-right: 15px;
+}
+
+@media (min-width: 992px) {
+	.container {
+		width: 970px;
+	}
+}
+
+@media (min-width: 768px) {
+	.container {
+		width: 750px;
+	}
+}
+
+body {
+	padding-left: 20px;
+	padding-bottom: 20px;
+	padding-top: 20px;
+}
+
+/*Validation*/
+
+.form-group.has-feedback > .form-control-feedback {
+	display: none;
+}
+
+.form-group.has-success.has-feedback > .form-control-feedback.glyphicon-ok {
+	display: block;
+}
+
+.form-group.has-warning.has-feedback > .form-control-feedback.glyphicon-warning-sign {
+	display: block;
+}
+
+.form-group.has-error.has-feedback > .form-control-feedback.glyphicon-remove {
+	display: block;
+}

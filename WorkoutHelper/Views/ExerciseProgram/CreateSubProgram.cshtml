@@ -1,0 +1,144 @@
+﻿@model WorkoutHelper.ViewModels.ExerciseProgramViewModel
+
+@{
+    ViewBag.Title = "CreateSubProgram";
+}
+<link href="~/Content/css/jquery-ui.css" rel="stylesheet"/>
+@using (Html.BeginForm(null, null, FormMethod.Post, new{id="subProgForm"}))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>SubProgram</h4>
+        <hr/>
+        @Html.ValidationSummary(true, "", new {@class = "text-danger"})
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Title, new {@class = "control-label col-md-2"})
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Title, new {htmlAttributes = new {@class = "form-control", @id="titleInput"}})
+                @Html.ValidationMessageFor(model => model.Title, "", new {@class = "text-danger"})
+            </div>
+        </div>
+
+        <div class="panel panel-info col-md-offset-2">
+            <div class="panel-heading">Add Program Elements</div>
+            <div class="panel-body">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Exercise, new { @class = "control-label col-md-2"})
+                    <div class="col-md-6">
+                        <p>
+                            <input type="text" class="form-control" id="exerciseInput">
+                            <input type="hidden" class="form-control" id="exerciseId">
+                        </p>
+                    </div>
+                </div>
+                <label>Select goals for the exercise</label>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Sets, new {@class = "control-label col-md-2"})
+                    <div class="col-md-3">
+                        @Html.EditorFor(model => model.Sets, new { htmlAttributes = new { @class = "form-control", @id = "numberField" } })
+                        @Html.ValidationMessageFor(model => model.Sets, "", new {@class = "text-danger"})
+                    </div>
+
+                    @Html.LabelFor(model => model.Reps, new {@class = "control-label col-md-2"})
+                    <div class="col-md-3">
+                        @Html.EditorFor(model => model.Reps, new {htmlAttributes = new {@class = "form-control"}})
+                        @Html.ValidationMessageFor(model => model.Reps, "", new {@class = "text-danger"})
+                    </div>
+                </div>
+                <br/>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Time, new {@class = "control-label col-md-2"})
+                    <div class="col-md-3">
+                        @Html.EditorFor(model => model.Time, new {htmlAttributes = new {@class = "form-control"}})
+                    </div>
+
+                    @Html.LabelFor(model => model.Distance, new {@class = "control-label col-md-2"})
+                    <div class="col-md-3">
+                        @Html.EditorFor(model => model.Distance, new {htmlAttributes = new {@class = "form-control"}})
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <a class="btn btn-info col-md-2" id="addExercise" href="#">Add</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default"/>
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back", "Create")
+    @Html.ActionLink("Cancel", "Index")
+</div>
+@section Scripts {
+@*@Scripts.Render("~/bundles/jqueryval")*@
+    <script src="~/Scripts/jquery-ui-1.11.4.js"></script>
+    <script>
+
+        //$("#addExercise").on("click", function() {
+        //    $.ajax({
+        //        url: "AddExerciseToSub"
+        //    })
+        //});
+
+        //var validator = $("#subProgForm").validate();
+        //validator.element("#titleInput");
+        //$("#titleInput").validate({
+        //    rules: {
+        //        titleInput: {
+        //            required: true,
+        //            minlength: 2
+        //        },
+        //        numberField: {
+        //            required: false,
+        //            digits: true,
+        //            minlength: 3
+        //        }
+        //    }
+        //});
+
+
+        $("#exerciseInput").autocomplete({
+            minLength: 0,
+            source: function(request, response) {
+                //request= current value. response: suggested data
+                $.ajax({
+                    url: "ExerciseAutocomplete",
+                    dataType: "json",
+                    data: { query: request.term },
+                    success: function(data) {
+                        response($.map(data, function(item) {
+                            return {
+                                label: item.Value,
+                                id: item.Key
+                            };
+                        }));
+                    }
+                });
+            },
+            select: function (event, ui) {
+                $("#exerciseInput").val(ui.item.label);
+                $("#exerciseId").val(ui.item.id);
+                //ui.item.value = ui.item.label;
+            },
+            change: function (event, ui) {
+                if (!ui.item) {
+                    //http://api.jqueryui.com/autocomplete/#event-change -
+                    // The item selected from the menu, if any. Otherwise the property is null
+                    //so clear the item for force selection
+                    $("#exerciseInput").val("");
+                }
+
+            }
+        })
+    </script>
+}

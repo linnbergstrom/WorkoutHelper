@@ -1,0 +1,55 @@
+﻿@using WorkoutHelper.Domain.Models
+@model WorkoutHelper.ViewModels.AdminViewModel
+@{
+    ViewBag.Title = "Admin";
+}
+
+<h2>Admin</h2>
+
+<div>
+    <div id="tabs">
+        <ul class="nav nav-tabs">
+            <li role="presentation"><a href="#home">Home</a></li>
+            <li role="presentation"><a href="#users">Users</a></li>
+            <li role="presentation"><a href="#exercises">Exercises</a></li>
+            <li role="presentation"><a href="#programs">Programs</a></li>
+            @*<li role="presentation"><a href="#muscles" aria-controls="muscles" role="tab" data-toggle="tab">Muscles</a></li>*@
+        </ul>
+
+
+        <div class="tab-content" id="AdminContentDiv">
+            @*Home*@
+            @Html.Partial("_EPForApproval")
+
+            @*<div role="tabpanel" class="tab-pane" id="muscles">
+                    Muscles
+                </div>*@
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/Scripts/jquery-ui-1.11.4.js"></script>
+    <script>
+        //$('#myTab a').click(function (e) {
+        //    e.preventDefault();
+        //    $(this).tab('show');
+        //})
+        function ShowHome() {
+            $("#home").css("display", "block");
+        };
+        function ShowUsers() {
+            $("#users").css("display", "block");
+        };
+        function ShowExercises() {
+            $("#exercises").css("display", "block");
+        };
+        function ShowEP() {
+            $("#programs").css("display", "block");
+        };
+
+        $(function () {
+            $("#tabs").tabs();
+        });
+    </script>
+}

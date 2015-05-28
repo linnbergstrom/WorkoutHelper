@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="3f2db0f5-a08a-49e8-9dbb-0e5e90afd429" name="ActivityDiagram1" linkedPackageId="2ff0aca1-7b78-4b7e-9e56-d7168d4c6bcf" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="b0d50221-1b61-40ea-b2c5-cad1138b25a8" name="ActivityDiagram1" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="5ac55adf-8e85-4903-8310-7d438aa2ad21" />
+        <nodes>
+          <initialNode Id="886b3145-cc54-41cc-ba84-89aea0168022" name="Initial1" isLeaf="false">
+            <elementDefinition Id="81fb2b13-c428-4a8c-a0de-890b31615676" />
+            <flowNodeTargets>
+              <controlFlow Id="1f9c8ca8-ade2-4a47-8fe2-9008f4652b01" isLeaf="false">
+                <opaqueActionMoniker Id="c7940912-6b63-479f-a2be-8248cf1a73f6" LastKnownName="Start Workout" />
+                <elementDefinition Id="7505be42-e090-44d7-b3c9-b1a0ccf550c2" />
+              </controlFlow>
+              <controlFlow Id="5c92eed1-34a9-410b-ba3e-e6a5b3bd3a2a" isLeaf="false">
+                <opaqueActionMoniker Id="671c4c2f-b7d3-4775-a342-8e65ef59125d" LastKnownName="Create Workout" />
+                <elementDefinition Id="0893297b-40f9-4d02-a6f8-88228ebe9b6f" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="671c4c2f-b7d3-4775-a342-8e65ef59125d" name="Create Workout" isLeaf="false">
+            <elementDefinition Id="2cf62c63-cfd3-4f48-8de5-1226c5b079ac" />
+            <flowNodeTargets>
+              <controlFlow Id="6c015e31-efbc-419b-bc83-4cf7fd200164" isLeaf="false">
+                <opaqueActionMoniker Id="e27a1568-add4-418b-b5ae-494cd5c3c8c5" LastKnownName="Select Program" />
+                <elementDefinition Id="ff18b264-d65f-418b-92ea-433dfae55cef" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="e27a1568-add4-418b-b5ae-494cd5c3c8c5" name="Select Program" isLeaf="false">
+            <elementDefinition Id="8d23d710-9174-4de5-b540-7dab3071f493" />
+            <flowNodeTargets>
+              <controlFlow Id="a8f3dc09-b7ac-4dec-b7fa-f94834518d64" isLeaf="false">
+                <opaqueActionMoniker Id="a41b8aaa-2a15-4309-9ccc-931134900ddd" LastKnownName="Document Program Element" />
+                <elementDefinition Id="2b9ae0bb-bab7-40ba-b0d5-a04056b904ee" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="a41b8aaa-2a15-4309-9ccc-931134900ddd" name="Document Program Element" isLeaf="false">
+            <elementDefinition Id="4abb4a7e-9d8c-4f9f-8d7f-d4f9d7f1aea1" />
+            <flowNodeTargets>
+              <controlFlow Id="0269ade9-fac8-44b8-b1aa-1d6873100db9" isLeaf="false">
+                <decisionNodeMoniker Id="0136aa4f-5ba1-40bc-9a9f-7c5e02400fa5" LastKnownName="Register More" />
+                <elementDefinition Id="5e5f86cf-8564-4312-8506-330e4363716b" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="0136aa4f-5ba1-40bc-9a9f-7c5e02400fa5" name="Register More" isLeaf="false">
+            <elementDefinition Id="296ba852-8488-4014-b29e-5914d0e758db" />
+            <flowNodeTargets>
+              <controlFlow Id="182cad3d-7aec-4be6-9490-8fb85d63b3d3" guard="Add More" name="Add More" isLeaf="false">
+                <opaqueActionMoniker Id="a41b8aaa-2a15-4309-9ccc-931134900ddd" LastKnownName="Document Program Element" />
+                <description>Add More</description>
+                <elementDefinition Id="7f857496-79ca-4f30-8952-61b199eb7bfc" />
+              </controlFlow>
+              <controlFlow Id="efaae143-61bc-46b6-a4f0-27750a0f6847" isLeaf="false">
+                <opaqueActionMoniker Id="bdf0d7cc-98f8-478b-84f7-0001a7094433" LastKnownName="Save Workout" />
+                <elementDefinition Id="b1d0ade0-4b67-4522-9878-c1f0cb942fa6" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="bdf0d7cc-98f8-478b-84f7-0001a7094433" name="Save Workout" isLeaf="false">
+            <elementDefinition Id="a3d2d357-8bd9-40ea-b44c-bbc077a3bd58" />
+          </opaqueAction>
+          <opaqueAction Id="c7940912-6b63-479f-a2be-8248cf1a73f6" name="Start Workout" isLeaf="false">
+            <elementDefinition Id="2367fa89-3a58-42eb-8615-cd07ee938577" />
+            <flowNodeTargets>
+              <controlFlow Id="e757649b-0582-41c3-bd2a-6e8c79dd4c6f" isLeaf="false">
+                <opaqueActionMoniker Id="a41b8aaa-2a15-4309-9ccc-931134900ddd" LastKnownName="Document Program Element" />
+                <elementDefinition Id="a9c8efb8-1114-4db6-bb3e-fe702e290f64" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <initialNode Id="55067676-58b6-474a-adda-2307d55072b9" name="Initial2" isLeaf="false">
+            <elementDefinition Id="ac7f86f6-37da-485e-8f1f-a9d4b03220c0" />
+            <flowNodeTargets>
+              <controlFlow Id="ae65390a-f38c-42ae-9527-e1f0a5029da4" isLeaf="false">
+                <opaqueActionMoniker Id="bbe1b33f-21a1-48fa-ab7b-0758d39ee825" LastKnownName="Create New Program" />
+                <elementDefinition Id="f4b90b5c-91f7-43d2-9be4-f8a576e41a51" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="bbe1b33f-21a1-48fa-ab7b-0758d39ee825" name="Create New Program" isLeaf="false">
+            <elementDefinition Id="f2de8624-8890-44f2-980b-f4fc0cebd279" />
+            <flowNodeTargets>
+              <controlFlow Id="9dbb64a9-6525-471b-a6cb-9c792860190e" isLeaf="false">
+                <opaqueActionMoniker Id="60da3830-5c9f-41d9-bc00-b3981361327a" LastKnownName="Plan Weeks" />
+                <elementDefinition Id="f83ba5fb-2309-4d9e-98f4-2d904cab147b" />
+              </controlFlow>
+              <controlFlow Id="5a108e8e-96a1-48ab-8525-d53898ea3207" isLeaf="false">
+                <opaqueActionMoniker Id="d461953d-41db-4b1f-80c9-9c5524e6d33b" LastKnownName="Create Program Elements" />
+                <elementDefinition Id="f2b30e3d-2e4c-49a6-be63-8fbeb3f22a7b" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="d461953d-41db-4b1f-80c9-9c5524e6d33b" name="Create Program Elements" isLeaf="false">
+            <elementDefinition Id="a5e40d26-ae67-4d46-9d00-3ee4fd331fad" />
+            <flowNodeTargets>
+              <controlFlow Id="c266c759-218f-44da-ab86-fefda16f766f" isLeaf="false">
+                <opaqueActionMoniker Id="acc50965-c00b-4160-acd0-f1c6d5f36b06" LastKnownName="Add Exercises" />
+                <elementDefinition Id="86360286-80f3-4859-adf0-3cdae48d7d65" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="acc50965-c00b-4160-acd0-f1c6d5f36b06" name="Add Exercises" isLeaf="false">
+            <elementDefinition Id="ed5032bb-d6ef-4886-ba38-95a5903984c3" />
+            <flowNodeTargets>
+              <controlFlow Id="b57b8769-7332-4718-b215-baec266b969c" isLeaf="false">
+                <decisionNodeMoniker Id="75bf086f-c8cd-4f26-8482-c7fd014f4814" LastKnownName="Decision1" />
+                <elementDefinition Id="950e234d-585c-4611-9827-2ba357bc8d62" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="75bf086f-c8cd-4f26-8482-c7fd014f4814" name="Decision1" isLeaf="false">
+            <elementDefinition Id="3af2e930-cd60-4955-a28a-9c69081cbfeb" />
+            <flowNodeTargets>
+              <controlFlow Id="cc37b048-f44c-4a43-8d33-63d40d3336b4" isLeaf="false">
+                <opaqueActionMoniker Id="60da3830-5c9f-41d9-bc00-b3981361327a" LastKnownName="Plan Weeks" />
+                <elementDefinition Id="1f3fb2b5-91ba-49e2-a3da-4bd406689556" />
+              </controlFlow>
+              <controlFlow Id="d6c76d16-0e80-4d42-937b-9394523aef5f" isLeaf="false">
+                <opaqueActionMoniker Id="d461953d-41db-4b1f-80c9-9c5524e6d33b" LastKnownName="Create Program Elements" />
+                <elementDefinition Id="776df625-18e1-4764-8017-70927cb0a804" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="60da3830-5c9f-41d9-bc00-b3981361327a" name="Plan Weeks" isLeaf="false">
+            <elementDefinition Id="223478e2-02a2-4355-b3ee-356a48657cf2" />
+            <flowNodeTargets>
+              <controlFlow Id="78885b44-266f-4417-a042-81eecd29dd6e" isLeaf="false">
+                <opaqueActionMoniker Id="c69ca330-48b6-4f64-bd87-5146691be565" LastKnownName="Add Workouts" />
+                <elementDefinition Id="f94b6710-b10c-4d11-8e79-3ce06efefecb" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="c69ca330-48b6-4f64-bd87-5146691be565" name="Add Workouts" isLeaf="false">
+            <elementDefinition Id="6a0b44dd-d026-49e8-afb5-4b66b86523f3" />
+            <flowNodeTargets>
+              <controlFlow Id="08d7681d-c32e-466d-ac54-d07f2ca83caa" isLeaf="false">
+                <activityFinalNodeMoniker Id="2e71c275-b4a3-48d2-a002-e80b71d766c8" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="c83b7d16-afa3-4b49-af15-c145c7f2c12f" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode Id="2e71c275-b4a3-48d2-a002-e80b71d766c8" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="c7a0a112-da3e-4d7a-902d-460f0485f044" />
+          </activityFinalNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="2ff0aca1-7b78-4b7e-9e56-d7168d4c6bcf" name="WorkoutHelperModels">
+    <elementDefinition Id="e91547d4-3fd6-4f5a-9933-e52a5c017928" />
+    <profileInstances>
+      <packageHasProfileInstances Id="1fa53e8a-eca7-472c-b882-1d1552de00e0">
+        <profileInstance Id="9d4135fb-e7b5-49dd-a145-84cf758a5785" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="8af47872-ec97-444f-a1bc-11077d80d767">
+        <profileInstance Id="839e9a1e-a157-488c-bf16-1ef6bc83409d" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</activityRootModel>

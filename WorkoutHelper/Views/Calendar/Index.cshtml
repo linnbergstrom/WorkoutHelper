@@ -1,0 +1,93 @@
+﻿@model WorkoutHelper.ViewModels.CalendarViewModel
+
+@{
+    ViewBag.Title = "Calendar";
+}
+@*<link href="~/Content/bootstrap-table.css" rel="stylesheet" />*@
+<style>
+    #calenderTable {
+        width: 100%;
+    }
+
+    #calendarHeader {
+        background-color: #c1c1ff;
+    }
+
+    .not_this_month {
+        background-color: #f8f8f8;
+    }
+
+    th {
+        text-align: center;
+    }
+
+    td {
+        text-align: left;
+    }
+
+    .weekNrCell {
+        font-size: 0.8em;
+        margin-left: auto;
+        text-align: right;
+    }
+</style>
+<h2>@Model.Month</h2>
+
+<div class="col-md-10">
+    <div id="calendarHeader">
+        <h4></h4>
+    </div>
+    <table class="table-bordered" id="calenderTable" data-toggle="table">
+        <thead>
+            <tr>
+                <th>@Model.DayNames[1]</th>
+                <th>@Model.DayNames[2]</th>
+                <th>@Model.DayNames[3]</th>
+                <th>@Model.DayNames[4]</th>
+                <th>@Model.DayNames[5]</th>
+                <th>@Model.DayNames[6]</th>
+                <th>@Model.DayNames[0]</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var week in Model.Weeks)
+            {
+                <tr class="weekRow">
+                    @foreach (var day in week.Days)
+                    {
+                        <td class="dayCell">
+                            <table class="table">
+                                <tr>
+                                    <td>
+                                        @day.DayNr
+                                    </td>
+                                    <td class="weekNrCell">
+                                        @if (day.IsMonday)
+                                        {
+                                            @day.WeekNr
+                                        }
+                                    </td>
+                                </tr>
+                                <tr>
+                                    @if (day.Workouts != null)
+                                    {
+                                        <td>
+                                            @foreach (var workout in day.Workouts)
+                                            {
+                                                <p>@Html.ActionLink(workout.Value, "Details", "Workout", new { @id = workout.Key }, new { @id = "workoutLink" })</p>
+                                            }
+                                        </td>
+                                    }
+                                </tr>
+                            </table>
+                        </td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+@section Scripts {
+    @*<script src="~/Scripts/bootstrap-table.js"></script>
+        <script src="~/Scripts/bootstrap-table-sv-SE.js"></script>*@
+}

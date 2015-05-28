@@ -1,0 +1,23 @@
+﻿.ui-datepicker-header {
+	border: none;
+}
+
+.ui-datepicker table {
+	height: 20rem;
+}
+
+.ui-datepicker {
+	box-sizing: content-box;
+	width: 60%;
+}
+
+	.ui-datepicker td span, .ui-datepicker td a {
+		height: 110%;
+	}
+
+	.ui-datepicker select.ui-datepicker-month, .ui-datepicker select.ui-datepicker-year {
+		height: auto;
+		padding: 2px 8px;
+		margin: 2px;
+		font-size: 1rem;
+	}

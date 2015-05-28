@@ -1,0 +1,121 @@
+﻿@model List<WorkoutHelper.Domain.Models.ExerciseProgram>
+
+<div>
+    <div class="tile-buttons tile-buttons-small">
+        <ul class="tile-buttons-list">
+
+            @if (Model != null)
+            {
+                foreach (var menu in Model)
+                {
+                    <li>
+                        <a href="@Url.Action("CreateStepTwo", new {@id = menu.Id })">
+                            <p>
+                                @menu.Title
+                            </p>
+                            <div class="">
+                                @menu.Category
+                            </div>
+                        </a>
+                    </li>
+                }
+            }
+
+                <li>
+                    <a href="@Url.Action("Create", "ExerciseProgram")">
+                        <p>
+                            You have no programs.
+                        </p>
+                        <div>
+                            Create one?
+                        </div>
+                    </a>
+                </li>
+            
+            <li>
+                <a href="@Url.Action("ListPublicPrograms", "ExercisePRogram")">
+                    <h4>
+                        Browse public programs
+                    </h4>
+                    <h4></h4>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+@*<div role="tabpanel" class="tab-pane" id="programs">
+    <h2>Programs</h2>
+    <p>@Html.ActionLink("Create New", "Create", "ExerciseProgram", null, new { @class = "btn btn-primary" })</p>
+    <table class="table table-striped">
+        <tr>
+            <th>Title</th>
+            <th>Creator</th>
+            <th>Skill Level</th>
+            <th>Exercise Type</th>
+            <th>Public</th>
+            <th>Approved</th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.MyPrograms)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedBy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Level)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Public)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PublicApproved)
+                </td>
+                <td>
+                    @Html.ActionLink("Select", "CreateStepTwo", "Workout", new { @id = item.Id }, new { @class = "btn btn-default" })
+                </td>
+            </tr>
+        }
+    </table>
+</div>*@
+
+
+
+@*@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <div class="form-group">
+            @Html.LabelFor(model => model.ExerciseProgramId, htmlAttributes: new { @class = "control-label col-md-2 xs-col-2" })
+            <div class="col-xs-6 col-md-6">
+                @Html.DropDownListFor(model => model.ExerciseProgramId, Model.ExerciseProgramOptions, new { @id = "exerciseProgOption", @class = "form-control", @size = 15 })
+            </div>
+        </div>
+
+        <div id="subProgramDiv">
+        </div>
+
+        <div class="form-group">
+            
+        </div><div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Select" class="btn btn-primary" />
+                 @Html.ActionLink("Create New", "Create", "ExerciseProgram", null, new { @class = "btn btn-default" })
+            </div>
+    </div>
+}*@
+
+<div>
+    @Html.ActionLink("Cancel", "Index")
+</div>
+@section Scripts {
+<script src="~/Scripts/jquery.validate.js"></script>
+}

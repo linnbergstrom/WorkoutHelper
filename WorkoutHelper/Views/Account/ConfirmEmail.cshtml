@@ -1,0 +1,26 @@
+﻿@{
+    Layout = null;
+    ViewBag.Title = "Confirm Email";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <h2>Welcome to WorkoutHelper @ViewBag.Name</h2>
+    <div>
+        <p>
+            Please follow the link to complete your registration.
+        </p>
+        <br /><br />
+        <p>
+            Thank you for confirming your email. Please @Html.ActionLink("Click here to Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
+        </p>
+        @*<a href="@ViewBag.ServerLink@Url.Action("RegisterConfirmation", "Account")/@ViewBag.ConfirmationToken">Bekräfta Email</a>*@
+    </div>
+</body>
+</html>

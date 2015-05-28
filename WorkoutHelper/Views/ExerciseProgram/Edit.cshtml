@@ -1,0 +1,81 @@
+﻿@model WorkoutHelper.ViewModels.ExerciseProgramViewModel
+
+<div class="col-xs-6 col-md-2">
+    <div class="">
+        <h4>@Model.Title</h4>
+        <h5>@Model.CreatedBy</h5>
+    </div>
+    @if (ViewBag.ShowNote == "true")
+    {
+        <div class="panel panel-info">
+            <div class="panel-heading"></div>
+            <div class="panel-body">
+                <h6></h6>
+            </div>
+        </div>
+    }
+</div>
+<div class="col-xs-6 col-md-4">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label" })
+                <div class="">
+                    @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Category, new { @class = "control-label" })
+                <div class="">
+                    @Html.EnumDropDownListFor(model => model.Category, new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Level, htmlAttributes: new { @class = "control-label" })
+                <div class="">
+                    @Html.EnumDropDownListFor(model => model.Level, new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Public, htmlAttributes: new { @class = "control-label" })
+                <div class="">
+                    @Html.CheckBoxFor(model => model.Public, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save changes" class="btn btn-default" />
+                @Html.ActionLink("Add or change exercises", "ExerciseElements", new { id = Model.Id }, new { @class = "btn btn-primary" })
+            </div>
+        </div>
+    }
+
+    @using (Html.BeginForm("Delete", "ExerciseProgram", FormMethod.Post))
+    {
+       <input type="hidden" name="id" value="@Model.Id"/>
+    <input type="submit" value="Delete" class="btn btn-danger" />
+    }
+
+</div>
+
+<div class="col-md-6">
+
+</div>
+
+<div class="col-md-12">
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    @Scripts.Render("~/bundles/jqueryval")
+
+}

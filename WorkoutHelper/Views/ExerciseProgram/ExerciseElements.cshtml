@@ -1,0 +1,190 @@
+﻿@model WorkoutHelper.ViewModels.ExerciseElementViewModel
+<link href="~/Content/css/jquery-ui.css" rel="stylesheet" />
+
+<div class="hidden-xs col-md-3">
+    <div class="">
+        <h4>@Model.ParentName</h4>
+        <p>Id: @Model.ParentId</p>
+        <p>Category: @Model.ProgramCategory</p>
+        <p>Skill level: @Model.ProgramLevel</p>
+    </div>
+    @if (ViewBag.ShowNote == "true")
+    {
+        <div class="panel panel-info">
+            <div class="panel-heading"></div>
+            <div class="panel-body">
+                <h6></h6>
+            </div>
+        </div>
+    }
+</div>
+<div class="col-xs-6 col-md-3">
+    <h4>Program elements</h4>
+    <ol id="progElementsList">
+        @foreach (string elem in Model.ProgramsElementStrings)
+        {
+            <li>@elem</li>
+        }
+    </ol>
+</div>
+
+<div class="col-xs-6 col-md-6">
+    @using (Ajax.BeginForm("ExerciseElements", "ExerciseProgram", new AjaxOptions
+    {
+        HttpMethod = "POST",
+        OnSuccess = "ElementSaved",
+        OnFailure = "SaveFailed",
+        Url = @Url.Action("ExerciseElements", "ExerciseProgram", null),
+        UpdateTargetId = "progElementsList",
+
+    }, new { autocomplete = "off" }))
+    {
+        <input style="display:none">
+        <input type="password" style="display:none">
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(model => model.ParentName, new { @id = "ElementsProgram" })
+        @Html.HiddenFor(model => model.ParentId, new { @id = "ElementsProgramId" })
+
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="panel panel-info">
+                <div class="panel-heading">Add Program Elements</div>
+                <div class="panel-body">
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.ExerciseName, new { @class = "control-label col-md-2" })
+                        <div class="col-md-6">
+                            @Html.EditorFor(model => model.ExerciseName, new { htmlAttributes = new { @class = "form-control", @id = "exerciseInput" } })
+                            <input type="hidden" class="form-control" id="exerciseId">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+
+                        <div class="col-md-12">
+                            @Html.LabelFor(model => model.Sets, new { @class = "control-label col-md-3" })
+                            <div class="col-md-3">
+                                @Html.EditorFor(model => model.Sets, new { htmlAttributes = new { @class = "form-control goalGroup", @id = "setsInput" } })
+                                @Html.ValidationMessageFor(model => model.Sets, "", new { @class = "text-danger" })
+                            </div>
+
+                            @Html.LabelFor(model => model.Reps, new { @class = "control-label col-md-3" })
+                            <div class="col-md-3">
+                                @Html.EditorFor(model => model.Reps, new { htmlAttributes = new { @class = "form-control goalGroup", @id = "repsInput" } })
+                                @Html.ValidationMessageFor(model => model.Reps, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            @Html.LabelFor(model => model.Time, new { @class = "control-label col-md-3" })
+                            <div class="col-md-3">
+                                @Html.EditorFor(model => model.Time, new { htmlAttributes = new { @class = "form-control goalGroup", @id = "timeInput" } })
+                            </div>
+                            @Html.LabelFor(model => model.Distance, new { @class = "control-label col-md-3" })
+                            <div class="col-md-3">
+                                @Html.EditorFor(model => model.Distance, new { htmlAttributes = new { @class = "form-control goalGroup", @id = "distanceInput" } })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            <input type="submit" name="AddExercise" value="Add Exercise" class="btn btn-info" />
+                            @Html.ActionLink("Finished", "Index", "ExerciseProgram", null, new { @class = "btn btn-default" })
+                        </div>
+                        @ViewBag.Message;
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @*<script src="~/Scripts/additional-methods.js"></script>*@
+    <script src="~/Scripts/jquery-ui-1.11.4.js"></script>
+
+    <script>
+        function ElementSaved() {
+            $("#exerciseInput").val("");
+            $("#setsInput").val("");
+            $("#repsInput").val("");
+            $("#timeInput").val("");
+            $("#distanceInput").val("");
+        }
+
+        function SaveFailed() {
+            alert("Save Failed");
+        }
+
+        $("#exerciseInput").autocomplete({
+            minLength: 0,
+            source: function (request, response) {
+                //request= current value. response: suggested data
+                $.ajax({
+                    url: "@Url.Action("ExerciseAutocomplete", "ExerciseProgram")",
+                    dataType: "json",
+                    data: { query: request.term },
+                    success: function (data) {
+                        response($.map(data, function (item) {
+                            return {
+                                label: item.Value,
+                                id: item.Key
+                            };
+                        }));
+                    }
+                });
+            },
+            select: function (event, ui) {
+                $("#exerciseInput").val(ui.item.label);
+                $("#exerciseId").val(ui.item.id);
+                //ui.item.value = ui.item.label;
+            },
+            change: function (event, ui) {
+                if (!ui.item) {
+                    $("#exerciseInput").val("");
+                }
+            }
+        });
+        $("#exerciseInput").focus(function () {
+            $(this).autocomplete("search", $(this).val());
+        })
+    </script>
+}
+
+@*//$("#addExercise").on("click", function () {
+    //    if (!$("#exerciseInput").val()) {
+    //        return false;
+    //    }
+    //    $.ajax({
+    //        type: "GET",
+    //        url: "SaveProgramElement",
+    //        dataType: "json",
+    //        data: { id: val },
+    //        success: function (result) {
+    //            var programElements = "<label>" + result + "</label>";
+    //            alert(programElements);
+    //            $("#exerciseListDiv").append(programElements);
+    //        }
+    //    });
+    //});
+
+    //$.validator.setDefaults({
+    //    debug: true,
+    //    success: "valid"
+    //});
+    //$("#subProgForm").validate({
+    //    rules: {
+    //        setsInput: {
+    //            require_from_group: [1, ".goalGroup"]
+    //        },
+    //        goalGroup: {
+    //            require_from_group: [1, ".goalGroup"]
+    //        },
+    //        timeInput: {
+    //            require_from_group: [1, ".goalGroup"]
+    //        },
+    //        distanceInput: {
+    //            require_from_group: [1, ".goalGroup"]
+    //        }
+    //    }
+    //});*@

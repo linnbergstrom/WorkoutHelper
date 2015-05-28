@@ -1,0 +1,31 @@
+﻿@model WorkoutHelper.ViewModels.WorkoutViewModel
+<div class=" co-xs-12 col-md-11 col-md-offset-1 workoutElements">
+    <table class="table table-striped">
+        <tr></tr>
+        <tr>
+            @using (Ajax.BeginForm("AddElement", "Workout", new AjaxOptions
+                {
+                    HttpMethod = "POST",
+                    OnSuccess = "OnSuccess",
+                    OnFailure = "OnFailure",
+                    UpdateTargetId = "workoutElements",
+                }))
+            {
+                var i = Model.ExerciseElements.Count - 1;
+                var element = Model.ExerciseElements.Last();
+                <td>
+                    <p>@Html.EditorFor(m => element.ExerciseName, new { htmlAttributes = new { @class = "form-control", @id = "exerciseInput" } })</p>
+                </td>
+                <td>
+                    @Html.EditorFor(m => element.Sets, new { htmlAttributes = new { @class = "form-control goalGroup", @id = "setsInput" } })
+                    @Html.ValidationMessageFor(m => element.Sets, "", new { @class = "text-danger" })
+                </td>
+                <td>@Html.EditorFor(m => element.Reps, new { htmlAttributes = new { @class = "form-control goalGroup", @id = "repsInput" } })</td>
+                <td>@Html.EditorFor(m => element.Time, new { htmlAttributes = new { @class = "form-control goalGroup", @id = "timeInput" } })</td>
+                <td>@Html.EditorFor(m => element.Distance, new { htmlAttributes = new { @class = "form-control goalGroup", @id = "distanceInput" } })</td>
+                <td></td>
+                <td><p><input type="submit" name="AddElement" value="Add Exercise" class="btn btn-info" /></td>
+            }
+        </tr>
+    </table>
+</div>

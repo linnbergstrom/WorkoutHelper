@@ -1,0 +1,44 @@
+﻿@*@using DayPilot.Web.Mvc.Events.Calendar
+@using ViewType = DayPilot.Web.Mvc.Enums.Calendar.ViewType*@
+@model WorkoutHelper.Domain.Models.Calendar
+
+@{
+    ViewBag.Title = "Calendar";
+}
+<link href="~/Content/css/jquery-ui.css" rel="stylesheet"/>
+@*<link href="~/Content/css/jquery-ui.theme.css" rel="stylesheet" />*@
+<link href="~/Content/css/Calendar.css" rel="stylesheet"/>
+
+<h2>My Calendar</h2>
+<div class="small-12 large-8 columns">
+    <div class="row" id="tile-buttons">
+
+        <div id="datepicker"></div>
+
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/Scripts/jquery-ui-1.11.4.js"></script>
+    <script>
+        $(function() {
+            $("#datepicker").datepicker(
+            {
+                firstDay: 1,
+                showWeek: true,
+                changeMonth: true,
+                changeYear: true
+                //beforeShowDay: function(date) {
+                //    var event = events[date];
+                //    if (event) {
+                //        return [true, 'mybold', 'cake'];
+                //    } else {
+                //        return [true, '', ''];
+                //    }
+
+                //}
+            });
+        });
+    </script>
+}
+  @*onSelect: "" Get events from repository, show in List*@

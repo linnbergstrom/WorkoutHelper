@@ -1,0 +1,20 @@
+﻿@*for desktops*@
+<div>
+    <div class="">
+        <h3>@ViewBag.SideTitle</h3>
+        <h5>
+            @ViewBag.SideMessage
+        </h5>
+    </div>
+
+ @if (ViewBag.ShowNote =="true")
+ {
+     <div class="panel panel-info">
+         <div class="panel-heading">@ViewBag.NoteTitle</div>
+         <div class="panel-body">
+             <h6>@ViewBag.NoteMessage</h6>
+         </div>
+     </div>
+ }
+</div>
+@*end*@

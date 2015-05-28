@@ -1,0 +1,33 @@
+﻿@model WorkoutHelper.ViewModels.LoginViewModel
+@{
+    ViewBag.Title = "Login";
+}
+
+<div class="small-12 large-8 columns">
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+    <fieldset>
+        <legend>Log in</legend>
+        <div class="row">
+            <div class="small-12 columns">
+                @Html.LabelFor(model => model.Email, new { @class = "" })
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "" } })
+            </div>
+        </div>
+        <div class="row">
+            <div class="small-12 columns">
+                @Html.LabelFor(model => model.Password, new { @class = "" })
+                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "" } })
+            </div>
+        </div>
+
+        @Html.ActionLink("Back to List", "Index", "Home", null, new { @class = "secondary button" })
+        <input type="submit" value="Save" class="button" />
+        @*
+            @Html.ActionLink("Save", "Index", null, new { @class = "button" })*@
+    </fieldset>
+    }
+</div>
+

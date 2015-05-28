@@ -1,0 +1,176 @@
+﻿
+.tile-buttons {
+	margin: 0 -10px 20px;
+	overflow: hidden;
+}
+
+@media (min-width: 768px) {
+	.tile-buttons {
+		margin-right: 0;
+		margin-left: 0;
+	}
+}
+
+@media (min-width: 768px) {
+	.tile-buttons li {
+		width: 12.5%;
+		font-size: 12px;
+	}
+}
+
+.tile-buttons-list {
+	padding-left: 0;
+	list-style: none;
+}
+
+.tile-buttons li {
+	float: left;
+	width: 33%;
+	height: 115px;
+	padding: 10px;
+	font-size: 10px;
+	line-height: 1.4;
+	text-align: center;
+	background-color: #f9f9f9;
+	border: 5px solid #fff;
+}
+
+	.tile-buttons li:hover {
+		background: #ffd800;
+		cursor: pointer;
+	}
+
+.tile-buttons a {
+	height: 115px;
+	/*color: #808080;*/
+	display: block;
+}
+
+	.tile-buttons a:hover {
+		text-decoration: none;
+	}
+/*@media (max-width: 768px) {
+  .tile-medium {
+    width: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tile-medium {
+    width: 150px;
+  }
+}
+
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.tile {
+  display: block;
+  cursor: pointer;
+  -webkit-perspective: 0;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition: -webkit-transform 0.2s;
+  float: left;
+  min-width: 75px;
+  min-height: 75px;
+  text-align: center;
+  opacity: 0.75;
+  background-color: #2e8bcc;
+  z-index: 1;
+  border: 4px #ffffff solid;
+  color: #ffffff;
+}
+.tile h1,
+.tile h2,
+.tile h3,
+.tile h4,
+.tile h5,
+.tile h6 {
+  color: #ffffff;
+  -webkit-user-select: none;
+}
+.tile h2 {
+  margin-top: -20px;
+  margin-left: 0px;
+}
+.tile h3,
+.tile h4 {
+  margin-top: -15px;
+}
+.tile h1.tile-text,
+.tile h2.tile-text,
+.tile h3.tile-text,
+.tile h4.tile-text {
+  margin-top: 20px;
+}
+.tile h1 {
+  font-size: 36px;
+}
+.tile h2 {
+  font-size: 30px;
+}
+.tile h3 {
+  font-size: 24px;
+}
+.tile h4 {
+  font-size: 18px;
+}
+.tile a:hover {
+  text-decoration: none;
+}
+.tile img {
+  border: 0;
+}
+.tile:hover {
+  opacity: 1;
+}
+.tile .tile-label {
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  font-size: 14px;
+  color: #ffffff;
+}
+.tile .tile-content .tile-icon-large {
+  margin-left: 0px;
+  vertical-align: middle !important;
+  text-align: center;
+}
+.tile .tile-content {
+  padding-top: 20px;
+  line-height: normal;
+  position: relative;
+  width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.tile.tile-blue {
+  background-color: #2e8bcc;
+}
+
+a.fa-links {
+  color: #ffffff;
+}
+a.fa-links:hover,
+a.fa-links:focus {
+  color: #ffffff;
+}
+.tile.tile-small {
+  height: 70px;
+  width: 70px;
+}
+.tile.tile-medium {
+  height: 150px;
+  width: 150px;
+}
+.tile.tile-wide,
+.tile.tile-double {
+  height: 150px;
+  width: 310px;
+}
+.tile.tile-large {
+  height: 310px;
+  width: 310px;
+}*/

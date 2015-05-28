@@ -1,0 +1,42 @@
+@import "foundation/settings";
+//start
+$oil: #808080;
+$sweetpink: lightcoral;
+
+/*#tile-buttons {
+    @extend text-center;
+
+    .panel {
+        height: 7rem;
+        background-color: rgba($sweetpink, 04);
+    }
+
+    /*$yell: #FF0;
+    $ltred: #F00;
+    $dkblue: #00F;
+    $ltblue: #AAF;
+    $dkbrown: #880;
+    $ltbrown: #AA0;
+
+    $colors: $yell, $ltred, $dkblue, $ltblue, $dkbrown, $ltbrown;
+
+    @for $i from 1 through length($colors) 
+    {
+   .column ul li:nth-of-type(#{$i}) .panel {
+            border:solid nth($colors, $i) 2px;
+        }
+    }
+}*/
+
+//ends
+
+@import "normalize";
+//Remove browser quirks
+@import "foundation"; //the foundation components
+@import "foundation.mvc"; //CSS overrides make sure that Foundation works well with MVC
+
+
+
+//Set own here
+
+
