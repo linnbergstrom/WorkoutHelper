@@ -1,13 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="3f2db0f5-a08a-49e8-9dbb-0e5e90afd429" name="ActivityDiagram1" linkedPackageId="2ff0aca1-7b78-4b7e-9e56-d7168d4c6bcf" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
-  <profileInstances>
-    <packageHasProfileInstances Id="27593ab5-fc44-42da-9b45-3d0a2fa6a88a">
-      <profileInstance Id="b9c3baf0-61f5-4883-9019-cb652ed09863" name="CSharpProfile">
-        <elementDefinition Id="76f890a8-d8cf-4467-8582-1936164d6198" />
-      </profileInstance>
-      <elementDefinition Id="16f82440-d719-4c67-9a71-01f582719569" />
-    </packageHasProfileInstances>
-  </profileInstances>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" dslVersion="1.0.0.0" Id="3f2db0f5-a08a-49e8-9dbb-0e5e90afd429" name="ActivityDiagram1" linkedPackageId="2ff0aca1-7b78-4b7e-9e56-d7168d4c6bcf" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
   <packagedElements>
     <activityRootModelHasActivity>
       <activity Id="b0d50221-1b61-40ea-b2c5-cad1138b25a8" name="ActivityDiagram1" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
@@ -162,6 +154,12 @@
           <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
         </profileInstance>
         <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="27593ab5-fc44-42da-9b45-3d0a2fa6a88a">
+        <profileInstance Id="b9c3baf0-61f5-4883-9019-cb652ed09863" name="CSharpProfile">
+          <elementDefinition Id="76f890a8-d8cf-4467-8582-1936164d6198" />
+        </profileInstance>
+        <elementDefinition Id="16f82440-d719-4c67-9a71-01f582719569" />
       </packageHasProfileInstances>
     </profileInstances>
   </package>

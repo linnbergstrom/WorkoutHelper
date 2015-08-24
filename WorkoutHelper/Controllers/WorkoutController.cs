@@ -98,10 +98,8 @@ namespace WorkoutHelper.Controllers
 				var we = new ExerciseElement();
 
 				we.ExerciseName = elem.ExerciseName;
-				we.Distance = elem.Distance;
-				we.Time = elem.Time;
 				we.Sets = elem.Sets;
-				we.Reps = elem.Reps;
+				we.Note = elem.Note;
 				we.ParentId = workout.Id;
 				we.ParentType = Constant.ParentIsWorkout;
 
@@ -140,10 +138,8 @@ namespace WorkoutHelper.Controllers
 					ExerciseName = elem.ExerciseName,
 					ParentId = elem.ParentId,
 					Sets = elem.Sets,
-					Reps = elem.Reps,
-					Distance = elem.Distance,
-					Time = elem.Time,
-				};
+					Note = elem.Note
+                };
 				ElemViews.Add(element);
 
 			}
@@ -176,9 +172,7 @@ namespace WorkoutHelper.Controllers
 					ParentId = elem.ParentId,
 					ParentType = Constant.ParentIsWorkout,
 					Sets = elem.Sets,
-					Reps = elem.Reps,
-					Distance = elem.Distance,
-					Time = elem.Time,
+					Note = elem.Note
 				};
 				_elementService.Update(programElement);
 			}

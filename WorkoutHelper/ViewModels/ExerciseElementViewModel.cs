@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
+using WorkoutHelper.Domain.Models;
 
 namespace WorkoutHelper.ViewModels
 {
@@ -14,18 +15,17 @@ namespace WorkoutHelper.ViewModels
 		[Display(Name = "Exercise")]
 		public string ExerciseName { get; set; }
 
-		[Range(0, 1000, ErrorMessage ="{0} can't be negative")]
-		public int? Sets { get; set; }
+		public List<Set> Sets { get; set; }
 
 		[Range(0, 1000, ErrorMessage = "{0} can't be negative")]
-		public int? Reps { get; set; }
+		public string Note { get; set; }
 
-		[DataType(DataType.Time)]
-		public DateTime? Time { get; set; }
+		//[DataType(DataType.Time)]
+		//public DateTime? Time { get; set; }
 
-		[Range(0, 1000, ErrorMessage = "{0} can't be negative")]
-		[Display(Name = "Distance(km)")]
-		public int? Distance { get; set; }
+		//[Range(0, 1000, ErrorMessage = "{0} can't be negative")]
+		//[Display(Name = "Distance(km)")]
+		//public int? Distance { get; set; }
 
 		public string ParentName { get; set; }
 

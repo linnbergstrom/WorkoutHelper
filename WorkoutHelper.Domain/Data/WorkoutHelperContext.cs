@@ -18,7 +18,8 @@ namespace WorkoutHelper.Domain.Data
 		public DbSet<Workout> Workouts { get; set; }
 		public DbSet<ExerciseProgram> ExercisePrograms { get; set; }
 		public DbSet<Exercise> Exercises { get; set; }
-		public DbSet<ExerciseElement> ExerciseElements { get; set; }
+        public DbSet<Set> Sets { get; set; }
+        public DbSet<ExerciseElement> ExerciseElements { get; set; }
 
 		public static WorkoutHelperContext Create()
 		{

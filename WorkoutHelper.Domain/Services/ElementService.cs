@@ -36,10 +36,8 @@ namespace WorkoutHelper.Domain.Services
 		public void Update(ExerciseElement element)
 		{
 			ExerciseElement old = db.ExerciseElements.First(w => w.Id == element.Id);
-			old.Distance = element.Distance;
-			old.Reps = element.Reps;
 			old.Sets = element.Sets;
-			old.Time = element.Time;
+			old.Note = element.Note;
 			db.SaveChanges();
 		}
 

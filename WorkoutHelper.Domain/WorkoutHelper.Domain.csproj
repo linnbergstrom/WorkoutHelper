@@ -142,6 +142,7 @@
     <Compile Include="Data\MenuItems.cs" />
     <Compile Include="Models\ExerciseProgram.cs" />
     <Compile Include="Models\ExerciseElement.cs" />
+    <Compile Include="Models\Set.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\Workout.cs" />

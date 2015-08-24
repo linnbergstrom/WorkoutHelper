@@ -16,27 +16,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{DD00D6
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8BC1FBF9-B975-4171-9ACB-5A950124B2DC}"
 	ProjectSection(SolutionItems) = preProject
+		Notes.txt = Notes.txt
 		WebEssentials-Settings.json = WebEssentials-Settings.json
 	EndProjectSection
 EndProject
 Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "WorkoutHelperModels", "WorkoutHelperModels\WorkoutHelperModels.modelproj", "{36EDF1A7-838F-4E0A-89A0-93B6765DABC9}"
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 4
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://jolene.visualstudio.com/defaultcollection
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = WorkoutHelper.Domain\\WorkoutHelper.Domain.csproj
-		SccProjectName1 = WorkoutHelper.Domain
-		SccLocalPath1 = WorkoutHelper.Domain
-		SccProjectUniqueName2 = WorkoutHelper\\WorkoutHelper.Web.csproj
-		SccProjectName2 = WorkoutHelper
-		SccLocalPath2 = WorkoutHelper
-		SccProjectUniqueName3 = WorkoutHelperModels\\WorkoutHelperModels.modelproj
-		SccProjectName3 = WorkoutHelperModels
-		SccLocalPath3 = WorkoutHelperModels
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU

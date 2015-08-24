@@ -72,8 +72,8 @@ namespace WorkoutHelper.Controllers
 			var list = new List<string>();
 			foreach (var elem in programElements)
 			{
-				var element = GetElementString(elem);
-				list.Add(element);
+				//var element = GetElementString(elem);
+				//list.Add(element);
 			}
 			var viewModel = new ExerciseElementViewModel
 			{
@@ -99,9 +99,8 @@ namespace WorkoutHelper.Controllers
 				ParentId = model.ParentId,
 				ParentType = Constant.ParentIsProgram,
 				Sets = model.Sets,
-				Reps = model.Reps,
-				Distance = model.Distance,
-				Time = model.Time,
+				Note = model.Note,
+
 			};
 			//save
 			ExerciseElement element = _elementService.SaveProgramElement(programElement);
@@ -112,27 +111,27 @@ namespace WorkoutHelper.Controllers
 			var list = new List<string>();
 			foreach (var elem in programElements)
 			{
-				var el = GetElementString(elem);
-				list.Add(el);
+				//var el = GetElementString(elem);
+				//list.Add(el);
 			}
 			//var v = list.Select(item => "<li>" + item + "</li>");
 			return Json(list.Select(item => "<li>" + item + "</li>"));
 		}
 		
-		public string GetElementString(ExerciseElement elem)
-		{
-			string element = elem.ExerciseName + ": ";
-			if (elem.Sets > 0)
-				element += "Sets: " + elem.Sets;
-			if (elem.Reps > 0)
-				element += ", Reps:" + elem.Reps;
-			if (elem.Time != null)
-				element += ", Time" + elem.Time.Value.ToShortTimeString();
-			if (elem.Distance != null)
-				element += ", Distance:" + elem.Reps;
+		//public string GetElementString(ExerciseElement elem)
+		//{
+		//	string element = elem.ExerciseName + ": ";
+		//	if (elem.Sets > 0)
+		//		element += "Sets: " + elem.Sets;
+		//	if (elem.Reps > 0)
+		//		element += ", Reps:" + elem.Reps;
+		//	if (elem.Time != null)
+		//		element += ", Time" + elem.Time.Value.ToShortTimeString();
+		//	if (elem.Distance != null)
+		//		element += ", Distance:" + elem.Reps;
 
-			return element;
-		}
+		//	return element;
+		//}
 		// GET: ExerciseProgram/Edit/5
 		public ActionResult Edit(int id)
 		{

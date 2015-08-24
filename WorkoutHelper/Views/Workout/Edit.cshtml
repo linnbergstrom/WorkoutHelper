@@ -60,8 +60,91 @@
         </div>
         <div class=" co-xs-12 col-md-11 col-md-offset-1 workoutElements">
             <h3>Exercises</h3>
-            <table class="table table-striped" id="workoutsTable">
+            @if (Model.ExerciseElements != null)
+            {
+                for (var i = 0; i < Model.ExerciseElements.Count - 1; i++)
+                {
+                    <div>
+                        <div>
+                            @Html.HiddenFor(m => Model.ExerciseElements[i].Id)
+                            @Html.HiddenFor(m => Model.ExerciseElements[i].ExerciseName)
+                            <p>@Html.DisplayFor(m => Model.ExerciseElements[i].ExerciseName)</p>
+                        </div>
+                        <div>@Html.EditorFor(m => Model.ExerciseElements[i].Note, new { htmlAttributes = new { @class = "form-control goalGroup", @id = "timeInput" } })</div>
+                        <div>
+                            @if (Model.ExerciseElements[i].Sets != null)
+                            {
+                                foreach (var set in Model.ExerciseElements[i].Sets)
+                                {
+                                    <div>@Html.EditorFor(m => set.Reps, new { htmlAttributes = new { @class = "form-control goalGroup", @id = "repsInput" } })</div>
+                                    <div>@Html.EditorFor(m => set.Weight, new { htmlAttributes = new { @class = "form-control goalGroup", @id = "repsInput" } })</div>
+                                }
+                            }
+                        </div>
+
+                        <div>
+                            @Ajax.ActionLink("Delete", "DeleteElement", new { @id = Model.ExerciseElements[i].Id }, new AjaxOptions
+                {
+                    HttpMethod = "Post",
+                    UpdateTargetId = "workoutElements"
+                }, new { @class = "btn btn-danger" })
+                        </div>
+                    </div>
+
+                }
+
+            }
+
+            @*<table class="table table-striped" id="workoutsTable">
+                    <tr>
+                        <th>Exercise</th>
+                        <th>Sets</th>
+                        <th>Reps</th>
+                        <th>Time</th>
+                        <th>Distance</th>
+                        <th></th>
+                    </tr>
+
+                    @if (Model.ExerciseElements != null)
+                    {
+                    for (var i = 0; i < Model.ExerciseElements.Count - 1; i++)
+                    {
+                    <tr>
+                        <td>
+                            @Html.HiddenFor(m => Model.ExerciseElements[i].Id)
+                            @Html.HiddenFor(m => Model.ExerciseElements[i].ExerciseName)
+                            <p>@Html.DisplayFor(m => Model.ExerciseElements[i].ExerciseName)</p>
+                        </td>
+                        <td>
+                            @Html.EditorFor(m => Model.ExerciseElements[i].Sets, new { htmlAttributes = new { @class = "form-control goalGroup", @id = "setsInput" } })
+                            @Html.ValidationMessageFor(m => Model.ExerciseElements[i].Sets, "", new { @class = "text-danger" })
+                        </td>
+                        <td>@Html.EditorFor(m => Model.ExerciseElements[i].Reps, new { htmlAttributes = new { @class = "form-control goalGroup", @id = "repsInput" } })</td>
+                        <td>@Html.EditorFor(m => Model.ExerciseElements[i].Time, new { htmlAttributes = new { @class = "form-control goalGroup", @id = "timeInput" } })</td>
+                        <td>@Html.EditorFor(m => Model.ExerciseElements[i].Distance, new { htmlAttributes = new { @class = "form-control goalGroup", @id = "distanceInput" } })</td>
+                        <td>
+                            @Ajax.ActionLink("Delete", "DeleteElement", new { @id = Model.ExerciseElements[i].Id }, new AjaxOptions
+                            {
+                            HttpMethod = "Post",
+                            UpdateTargetId = "workoutElements"
+                            }, new { @class = "btn btn-danger" })
+                        </td>
+                    </tr>
+
+                    }
+
+                    }
+                </table>*@
+        </div>
+    </div>
+}
+<div class="col-md-12">
+    @*@Html.Partial("_AddElement")*@
+    @*
+        <div class=" co-xs-12 col-md-11 col-md-offset-1 workoutElements">
+            <table class="table table-striped">
                 <tr>
+                    @*
                     <th>Exercise</th>
                     <th>Sets</th>
                     <th>Reps</th>
@@ -69,63 +152,16 @@
                     <th>Distance</th>
                     <th></th>
                 </tr>
-
-                @if (Model.ExerciseElements != null)
-                {
-                    for (var i = 0; i < Model.ExerciseElements.Count - 1; i++)
+                <tr>
+                    @using (Ajax.BeginForm("AddElement", "Workout", new AjaxOptions
                     {
-                        <tr>
-                            <td>
-                                @Html.HiddenFor(m => Model.ExerciseElements[i].Id)
-                                @Html.HiddenFor(m => Model.ExerciseElements[i].ExerciseName)
-                                <p>@Html.DisplayFor(m => Model.ExerciseElements[i].ExerciseName)</p>
-                            </td>
-                            <td>
-                                @Html.EditorFor(m => Model.ExerciseElements[i].Sets, new { htmlAttributes = new { @class = "form-control goalGroup", @id = "setsInput" } })
-                                @Html.ValidationMessageFor(m => Model.ExerciseElements[i].Sets, "", new { @class = "text-danger" })
-                        </td>
-                            <td>@Html.EditorFor(m => Model.ExerciseElements[i].Reps, new { htmlAttributes = new { @class = "form-control goalGroup", @id = "repsInput" } })</td>
-                            <td>@Html.EditorFor(m => Model.ExerciseElements[i].Time, new { htmlAttributes = new { @class = "form-control goalGroup", @id = "timeInput" } })</td>
-                            <td>@Html.EditorFor(m => Model.ExerciseElements[i].Distance, new { htmlAttributes = new { @class = "form-control goalGroup", @id = "distanceInput" } })</td>
-                            <td>
-                                @Ajax.ActionLink("Delete", "DeleteElement", new { @id = Model.ExerciseElements[i].Id }, new AjaxOptions
-                                   {
-                                       HttpMethod = "Post",
-                                       UpdateTargetId = "workoutElements"
-                                   }, new { @class = "btn btn-danger" })
-                            </td>
-                        </tr>
-
-                    }
-
-                }
-            </table>
-        </div>
-    </div>
-}
-<div class="col-md-12">
-    @*@Html.Partial("_AddElement")*@
-    @*
-    <div class=" co-xs-12 col-md-11 col-md-offset-1 workoutElements">
-        <table class="table table-striped">
-            <tr>
-                @*<th>Exercise</th>
-                <th>Sets</th>
-                <th>Reps</th>
-                <th>Time</th>
-                <th>Distance</th>
-                <th></th>
-            </tr>
-            <tr>
-                @using (Ajax.BeginForm("AddElement", "Workout", new AjaxOptions
-                {
                     HttpMethod = "POST",
                     OnSuccess = "OnSuccess",
                     OnFailure = "OnFailure",
                     UpdateTargetId = "workoutElements",
                     InsertionMode = InsertionMode.InsertAfter
-                }))
-                {
+                    }))
+                    {
                     var i = Model.ExerciseElements.Count-1;
                     var element = Model.ExerciseElements.Last();
                     <td>
@@ -139,17 +175,17 @@
                     <td>@Html.EditorFor(m => element.Time, new { htmlAttributes = new { @class = "form-control goalGroup", @id = "timeInput" } })</td>
                     <td>@Html.EditorFor(m => element.Distance, new { htmlAttributes = new { @class = "form-control goalGroup", @id = "distanceInput" } })</td>
                     <td></td>
-                    @*<td><input type="text" id="exerciseInput" class="form-control" /></td>
-    <td><input type="text" id="setsInput" class="form-control goalGroup" /></td>
-    <td><input type="text" id="repsInput" class="form-control goalGroup" /></td>
-    <td><input type="text" id="timeInput" class="form-control goalGroup" /></td>
-    <td><input type="text" id="distanceInput" class="form-control goalGroup" /></td>
+                    @*
+                    <td><input type="text" id="exerciseInput" class="form-control" /></td>
+                    <td><input type="text" id="setsInput" class="form-control goalGroup" /></td>
+                    <td><input type="text" id="repsInput" class="form-control goalGroup" /></td>
+                    <td><input type="text" id="timeInput" class="form-control goalGroup" /></td>
+                    <td><input type="text" id="distanceInput" class="form-control goalGroup" /></td>
                     <td><p><input type="submit" name="AddElement" value="Add Exercise" class="btn btn-info" /></td>
-                }
-            </tr>
-
-        </table>
-    </div>*@
+                    }
+                </tr>
+            </table>
+        </div>*@
 </div>
 
 <div>
@@ -157,7 +193,8 @@
 </div>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
-    @*<script src="~/Scripts/additional-methods.js"></script>*@
+    @*
+        <script src="~/Scripts/additional-methods.js"></script>*@
     <script src="~/Scripts/jquery-ui-1.11.4.js"></script>
     <script src="~/Scripts/jquery.datetimepicker.js"></script>
 
@@ -171,7 +208,6 @@
             //add element
             //clear inputs
         }
-
 
         $("#workoutDate").datetimepicker({
             lang: "en",

@@ -1,5 +1,10 @@
 ﻿@model WorkoutHelper.ViewModels.ExerciseElementViewModel
 <link href="~/Content/css/jquery-ui.css" rel="stylesheet" />
+<style>
+    input {
+        max-width: 100%;
+    }
+</style>
 
 <div class="hidden-xs col-md-3">
     <div class="">
@@ -37,7 +42,7 @@
         Url = @Url.Action("ExerciseElements", "ExerciseProgram", null),
         UpdateTargetId = "progElementsList",
 
-    }, new { autocomplete = "off" }))
+    }, new { autocomplete = "off", @class = "form-horizontal" }))
     {
         <input style="display:none">
         <input type="password" style="display:none">
@@ -45,47 +50,50 @@
         @Html.HiddenFor(model => model.ParentName, new { @id = "ElementsProgram" })
         @Html.HiddenFor(model => model.ParentId, new { @id = "ElementsProgramId" })
 
-        <div class="form-horizontal">
+        <div class="">
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <div class="panel panel-info">
                 <div class="panel-heading">Add Program Elements</div>
                 <div class="panel-body">
 
                     <div class="form-group">
-                        @Html.LabelFor(model => model.ExerciseName, new { @class = "control-label col-md-2" })
+                        @Html.LabelFor(model => model.ExerciseName, new { @class = "col-md-2" })
                         <div class="col-md-6">
                             @Html.EditorFor(model => model.ExerciseName, new { htmlAttributes = new { @class = "form-control", @id = "exerciseInput" } })
                             <input type="hidden" class="form-control" id="exerciseId">
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <div id="setList" class="form-group">
 
-                        <div class="col-md-12">
-                            @Html.LabelFor(model => model.Sets, new { @class = "control-label col-md-3" })
+                        @Html.LabelFor(model => model.Sets, new { @class = "col-md-12" })
+                        <hr />
+                        @if (Model.Sets == null)
+                        {
+                            Model.Sets = new List<WorkoutHelper.Domain.Models.Set>();
+                            Model.Sets.Add(new WorkoutHelper.Domain.Models.Set());
+                        }
+                        @for (var i = 0; i < Model.Sets.Count; i++)
+                        {
+                            var set = Model.Sets[i];
+
+                            <label class="control-label col-md-2">Set @(i + 1)</label>
+
+                            @Html.LabelFor(reps => set.Reps, new { @class = "control-label col-md-2" })
                             <div class="col-md-3">
-                                @Html.EditorFor(model => model.Sets, new { htmlAttributes = new { @class = "form-control goalGroup", @id = "setsInput" } })
-                                @Html.ValidationMessageFor(model => model.Sets, "", new { @class = "text-danger" })
+                                @Html.EditorFor(reps => set.Reps, new { @class = "" })
                             </div>
 
-                            @Html.LabelFor(model => model.Reps, new { @class = "control-label col-md-3" })
+                            @Html.LabelFor(weight => set.Weight, new { @class = "control-label col-md-2" })
                             <div class="col-md-3">
-                                @Html.EditorFor(model => model.Reps, new { htmlAttributes = new { @class = "form-control goalGroup", @id = "repsInput" } })
-                                @Html.ValidationMessageFor(model => model.Reps, "", new { @class = "text-danger" })
+                                @Html.EditorFor(weight => set.Weight, new { @class = "" })
                             </div>
-                        </div>
 
-                        <div class="col-md-12">
-                            @Html.LabelFor(model => model.Time, new { @class = "control-label col-md-3" })
-                            <div class="col-md-3">
-                                @Html.EditorFor(model => model.Time, new { htmlAttributes = new { @class = "form-control goalGroup", @id = "timeInput" } })
-                            </div>
-                            @Html.LabelFor(model => model.Distance, new { @class = "control-label col-md-3" })
-                            <div class="col-md-3">
-                                @Html.EditorFor(model => model.Distance, new { htmlAttributes = new { @class = "form-control goalGroup", @id = "distanceInput" } })
-                            </div>
-                        </div>
+                        }
                     </div>
+                    <br />
+                    <a class="btn btn-info" id="addSet">Add Set</a>
+                    <hr />
                     <div class="form-group">
                         <div class="col-md-10">
                             <input type="submit" name="AddExercise" value="Add Exercise" class="btn btn-info" />
@@ -108,8 +116,6 @@
             $("#exerciseInput").val("");
             $("#setsInput").val("");
             $("#repsInput").val("");
-            $("#timeInput").val("");
-            $("#distanceInput").val("");
         }
 
         function SaveFailed() {
@@ -148,6 +154,10 @@
         $("#exerciseInput").focus(function () {
             $(this).autocomplete("search", $(this).val());
         })
+
+        $("#addSet").on("click", function(){
+            $("#setList").add("")
+        }
     </script>
 }
 
